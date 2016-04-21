@@ -4,14 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.guest.cofeshop.MainActivity">
+    tools:context="com.example.guest.cofeshop.MainActivity"
+    android:background="#bfaa80">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Find Local Shops"
+        android:id="@+id/findShopsButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textColor="#ea4f5155"
+        android:textSize="18dp"
+        android:paddingTop="18dp"
+        android:paddingBottom="18dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"/>
+        android:text="Coffee Shops"
+        android:id="@+id/titleTextView"
+        android:layout_marginTop="52dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#143b03"
+        android:textSize="45dp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        android:gravity="start|center_horizontal"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mainPageImageView"
+        android:src="@drawable/coffee"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:cropToPadding="false"
+        android:paddingTop="40dp"/>
+
 </RelativeLayout>
