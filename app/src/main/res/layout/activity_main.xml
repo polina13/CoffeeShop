@@ -15,17 +15,17 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:textColor="#ea4f5155"
+        android:textColor="#eadadee5"
         android:textSize="18sp"
         android:paddingTop="18dp"
-        android:paddingBottom="18dp"/>
+        android:paddingBottom="18dp"
+        android:background="#3f3803"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Coffee Shops"
         android:id="@+id/titleTextView"
-        android:layout_marginTop="52dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textColor="#143b03"
@@ -33,7 +33,7 @@
         android:textStyle="bold"
         android:typeface="normal"
         android:gravity="start|center_horizontal"
-        />
+        android:layout_marginTop="35dp"/>
 
     <ImageView
         android:layout_width="wrap_content"
@@ -44,6 +44,35 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:cropToPadding="false"
-        android:paddingTop="40dp"/>
+        android:paddingBottom="89dp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/findShopsButton"
+        android:layout_alignStart="@+id/findShopsButton"
+        android:weightSum="1"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:layout_width="197dp"
+            android:layout_height="match_parent"
+            android:id="@+id/relaxView"
+            android:src="@drawable/relax"
+            android:layout_marginTop="365dp"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:src="@drawable/cofferoom"
+            android:layout_marginTop="365dp"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"/>
+    </LinearLayout>
 
 </RelativeLayout>
