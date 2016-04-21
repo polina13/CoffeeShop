@@ -7,19 +7,16 @@
     tools:context="com.example.guest.cofeshop.MainActivity"
     android:background="#bfaa80">
 
-    <Button
-        android:layout_width="match_parent"
+    <ImageView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Find Local Shops"
-        android:id="@+id/findShopsButton"
+        android:id="@+id/mainPageImageView"
+        android:src="@drawable/coffee"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:textColor="#eadadee5"
-        android:textSize="18sp"
-        android:paddingTop="18dp"
-        android:paddingBottom="18dp"
-        android:background="#3f3803"/>
+        android:cropToPadding="false"
+        android:paddingBottom="89dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -35,16 +32,30 @@
         android:gravity="start|center_horizontal"
         android:layout_marginTop="35dp"/>
 
-    <ImageView
-        android:layout_width="wrap_content"
+    <Button
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/mainPageImageView"
-        android:src="@drawable/coffee"
+        android:text="Find Local Shops"
+        android:id="@+id/findShopsButton"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:cropToPadding="false"
-        android:paddingBottom="89dp"/>
+        android:textColor="#eadadee5"
+        android:textSize="18sp"
+        android:paddingTop="18dp"
+        android:paddingBottom="18dp"
+        android:background="#3f3803"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/locationEditText"
+        android:background="#f6cbcb"
+        android:layout_above="@+id/findCoffeeShopsButton"
+        android:layout_marginBottom="10dp"
+        android:padding="5dp"
+        android:hint="Enter Zip Code"
+        android:layout_centerHorizontal="true" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -74,5 +85,7 @@
             android:scaleType="fitXY"
             android:adjustViewBounds="true"/>
     </LinearLayout>
+
+
 
 </RelativeLayout>
