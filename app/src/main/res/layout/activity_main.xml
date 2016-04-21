@@ -16,7 +16,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:textColor="#ea4f5155"
-        android:textSize="18dp"
+        android:textSize="18sp"
         android:paddingTop="18dp"
         android:paddingBottom="18dp"/>
 
@@ -29,7 +29,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textColor="#143b03"
-        android:textSize="45dp"
+        android:textSize="45sp"
         android:textStyle="bold"
         android:typeface="normal"
         android:gravity="start|center_horizontal"
