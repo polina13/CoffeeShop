@@ -12,7 +12,7 @@ import com.example.guest.cofeshop.R;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = MainActivity.class.getSimpleName();
     @Bind(R.id.findShopsButton)
     Button mFindShopsButton;
@@ -23,14 +23,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        mFindShopsButton.setOnClickListener(new View.OnClickListener() {
-            ;
+        mFindShopsButton.setOnClickListener(this);
 
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CoffeeShopsActivity.class);
-                startActivity(intent);
-            }
-        });
+    }
+    @Override
+    public void onClick(View view) {
+        Intent intent = new Intent(MainActivity.this, CoffeeShopsActivity.class);
+        startActivity(intent);
     }
 }
