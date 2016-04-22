@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Popular Coffee Shops"
-        android:id="@+id/locationTextView"
+        android:id="@+id/coffeeNamesTextView"
         android:layout_centerHorizontal="true"
         android:paddingTop="5sp"
         android:paddingBottom="25sp"
@@ -30,5 +30,5 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:textSize="15dp"
-        android:layout_below="@+id/locationTextView" />
+        android:layout_below="@+id/coffeeNamesTextView" />
 </RelativeLayout>

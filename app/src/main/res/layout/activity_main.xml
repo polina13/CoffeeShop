@@ -76,6 +76,4 @@
             android:adjustViewBounds="true"/>
     </LinearLayout>
 
-
-
 </RelativeLayout>

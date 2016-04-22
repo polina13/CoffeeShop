@@ -13,7 +13,7 @@ import butterknife.ButterKnife;
 
 public class CoffeeShopsActivity extends AppCompatActivity implements View.OnClickListener{
     @Bind(R.id.searchButton) Button mSearchButton;
-    @Bind(R.id.locationEditText) EditText mLocationEditText;
+    @Bind(R.id.coffeePlacesEditText) EditText mCoffeePlacesEditText;
     public static final String TAG = CoffeeShopsActivity.class.getSimpleName();
 
     @Override
@@ -26,8 +26,8 @@ public class CoffeeShopsActivity extends AppCompatActivity implements View.OnCli
     }
 
     @Override
-    public void onClick(View v) {
-        String location = mLocationEditText.getText().toString();
+    public void onClick(View view) {
+        String location = mCoffeePlacesEditText.getText().toString();
         Intent intent = new Intent(CoffeeShopsActivity.this, DisplayActivity.class);
         intent.putExtra("location", location);
         startActivity(intent);

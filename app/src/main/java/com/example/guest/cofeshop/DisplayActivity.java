@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class DisplayActivity extends AppCompatActivity {
-    private TextView mLocationTextView;
+    private TextView mCoffeeNamesTextView;
     private ListView mListView;
     private String[] shops = new String[] {"Ava Roasteria", "Peet's Coffee",
             "Coffeehouse Northwest", "Umbria Caffe", "Spella Caffe", "Stump Town",
@@ -36,9 +36,9 @@ public class DisplayActivity extends AppCompatActivity {
             }
         });
 
-        mLocationTextView = (TextView) findViewById(R.id.locationTextView);
+        mCoffeeNamesTextView = (TextView) findViewById(R.id.coffeeNamesTextView);
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
-        mLocationTextView.setText("Popular Coffee Places: " + location);
+        mCoffeeNamesTextView.setText("Popular Coffee Places: " + location);
     }
 }
