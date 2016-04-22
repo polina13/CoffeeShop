@@ -1,5 +1,6 @@
 package com.example.guest.cofeshop;
 
+import android.content.Intent;
 import android.os.Build;
 import android.widget.TextView;
 
@@ -31,5 +32,14 @@ public class MainActivityTest {
     public void validateCoffeePlaceTextView() {
         TextView titleTextView = (TextView) shop.findViewById(R.id.titleTextView);
         assertTrue("Coffee Shops".equals(titleTextView.getText().toString()));
+    }
+
+    @Test
+    public void secondActivityStarted() {
+        shop.findViewById(R.id.findShopsButton).performClick();
+        Intent expectedIntent = new Intent(shop,CoffeeShopsActivity.class);
+        ShadowActivity shadowActivity = org.robolectric.Shadows.shadowOf(shop);
+        Intent actualIntent = shadowActivity.getNextStartedActivity();
+        assertTrue(actualIntent.filterEquals(expectedIntent));
     }
 }
