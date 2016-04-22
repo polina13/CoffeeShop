@@ -7,14 +7,31 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.guest.cofeshop.DisplayActivity">
+    tools:context="com.example.guest.cofeshop.DisplayActivity"
+    android:backgroundTintMode="screen">
 
-<ListView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/listView"
-    android:layout_below="@+id/locationTextView"
-    android:layout_alignParentRight="true"
-    android:layout_alignParentEnd="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Popular Coffee Shops"
+        android:id="@+id/locationTextView"
+        android:layout_centerHorizontal="true"
+        android:clickable="false"
+        android:paddingTop="10sp"
+        android:paddingBottom="10sp"
+        android:textColor="#1d1801"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView"
+        android:background="#7774580b"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/locationTextView"
+        android:fastScrollAlwaysVisible="false" />
 
 </RelativeLayout>
