@@ -26,12 +26,12 @@ public class CoffeeShopsActivity extends AppCompatActivity implements View.OnCli
     }
 
     @Override
-    public void onClick(View view) {
+    public void onClick(View v) {
         String location = mLocationEditText.getText().toString();
         Intent intent = new Intent(CoffeeShopsActivity.this, DisplayActivity.class);
+        intent.putExtra("location", location);
         startActivity(intent);
     }
-
 }
 
 
