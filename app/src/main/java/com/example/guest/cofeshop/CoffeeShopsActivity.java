@@ -11,7 +11,7 @@ import android.widget.EditText;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class CoffeeShopsActivity extends AppCompatActivity {
+public class CoffeeShopsActivity extends AppCompatActivity implements View.OnClickListener{
     @Bind(R.id.searchButton) Button mSearchButton;
     @Bind(R.id.locationEditText) EditText mLocationEditText;
     public static final String TAG = CoffeeShopsActivity.class.getSimpleName();
@@ -22,20 +22,18 @@ public class CoffeeShopsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_coffee_shops);
         ButterKnife.bind(this);
 
-        mSearchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String location = mLocationEditText.getText().toString();
-                Log.d(TAG, location);
-                Intent intent = new Intent(CoffeeShopsActivity.this, DisplayActivity.class);
-//
-//                intent.putExtra("location", mLocationEditText);
-                startActivity(intent);
-            }
-        });
-
+        mSearchButton.setOnClickListener(this);
     }
+
+    @Override
+    public void onClick(View view) {
+        String location = mLocationEditText.getText().toString();
+        Intent intent = new Intent(CoffeeShopsActivity.this, DisplayActivity.class);
+        startActivity(intent);
+    }
+
 }
+
 
 
 

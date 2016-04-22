@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 import com.example.guest.cofeshop.R;
 
@@ -14,8 +15,7 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = MainActivity.class.getSimpleName();
-    @Bind(R.id.findShopsButton)
-    Button mFindShopsButton;
+    @Bind(R.id.findShopsButton) Button mFindShopsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,3 +32,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(intent);
     }
 }
+
