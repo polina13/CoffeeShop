@@ -14,11 +14,8 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
-    @Bind(R.id.findCoffeeShopsButton)
+    @Bind(R.id.findShopsButton)
     Button mFindShopsButton;
-
-//    private Button mFindShopsButton;
-//    private EditText mLocationEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,14 +23,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-//        mLocationEditText = (EditText) findViewById(R.id.locationEditText);
-        mFindShopsButton = (Button) findViewById(R.id.findShopsButton);
         mFindShopsButton.setOnClickListener(new View.OnClickListener() {
             ;
 
             @Override
             public void onClick(View v) {
-//                String location = mLocationEditText.getText().toString();
                 Intent intent = new Intent(MainActivity.this, CoffeeShopsActivity.class);
                 startActivity(intent);
             }

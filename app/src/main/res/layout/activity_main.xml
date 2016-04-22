@@ -47,17 +47,6 @@
         android:background="#3f3803"/>
 
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/locationEditText"
-        android:background="#f6cbcb"
-        android:layout_above="@+id/findCoffeeShopsButton"
-        android:layout_marginBottom="10dp"
-        android:padding="5dp"
-        android:hint="Enter Zip Code"
-        android:layout_centerHorizontal="true" />
-
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
