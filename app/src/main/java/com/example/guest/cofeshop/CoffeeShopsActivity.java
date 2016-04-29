@@ -22,6 +22,7 @@ public class CoffeeShopsActivity extends AppCompatActivity implements View.OnCli
         ButterKnife.bind(this);
 
         mSearchButton.setOnClickListener(this);
+
     }
 
     @Override
