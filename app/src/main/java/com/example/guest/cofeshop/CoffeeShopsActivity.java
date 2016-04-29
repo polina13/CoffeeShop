@@ -11,7 +11,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class CoffeeShopsActivity extends AppCompatActivity implements View.OnClickListener{
-    @Bind(R.id.searchButton) Button mSearchButton;
+    @Bind(R.id.searchCoffeeButton) Button mSearchButton;
     @Bind(R.id.coffeePlacesEditText) EditText mCoffeePlacesEditText;
     public static final String TAG = CoffeeShopsActivity.class.getSimpleName();
 
@@ -22,17 +22,18 @@ public class CoffeeShopsActivity extends AppCompatActivity implements View.OnCli
         ButterKnife.bind(this);
 
         mSearchButton.setOnClickListener(this);
-
     }
 
     @Override
     public void onClick(View view) {
         String location = mCoffeePlacesEditText.getText().toString();
-        Intent intent = new Intent(CoffeeShopsActivity.this, DisplayActivity.class);
+        Intent intent = new Intent(CoffeeShopsActivity.this, DisplayListActivity.class);
         intent.putExtra("location", location);
         startActivity(intent);
     }
 }
+
+
 
 
 

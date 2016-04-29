@@ -1,5 +1,7 @@
 package com.example.guest.cofeshop;
 
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -65,7 +67,7 @@ public class YelpService {
                         address.add(addressJSON.get(y).toString());
                     }
                     ArrayList<String> categories = new ArrayList<>();
-                    JSONArray categoriesJSON = yelpSearchJSON.getJSONArray("categories");
+                    JSONArray categoriesJSON = coffeeShopJSON.getJSONArray("categories");
 
                     for (int y = 0; y < categoriesJSON.length(); y++) {
                         categories.add(categoriesJSON.getJSONArray(y).get(0).toString());
@@ -76,6 +78,7 @@ public class YelpService {
 //                            .getJSONObject("coordinate").getDouble("longitude");
                     String menu = coffeeShopJSON.optString("menu_provider", "Menu provider not included");
                     int reviewCount = coffeeShopJSON.getInt("review_count");
+                    Log.d("json", yelpSearchJSON.toString());
                     Coffee coffee = new Coffee(name, phone, website, image, rating, address, categories, menu, reviewCount);
                     coffeesShops.add(coffee);
                 }

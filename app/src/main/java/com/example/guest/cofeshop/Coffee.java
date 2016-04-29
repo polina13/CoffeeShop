@@ -31,7 +31,8 @@ public class Coffee {
     }
 
     private String getLargeImage(String image) {
-        return mImage;
+        String largeImage = image.substring(0, image.length() - 6).concat("o.jpg");
+        return largeImage;
     }
 
     public String getName () {
@@ -61,8 +62,6 @@ public class Coffee {
     }
 
     public ArrayList<String> getCategories(String categories) {
-        if (categories == "coffeeroasteries") {
-        }
         return mCategories;
     }
 

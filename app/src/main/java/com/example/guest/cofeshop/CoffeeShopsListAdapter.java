@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 import butterknife.Bind;
@@ -55,6 +57,7 @@ public class CoffeeShopsListAdapter extends RecyclerView.Adapter<CoffeeShopsList
         }
 
         public void bindCoffeeShop(Coffee coffeeshops) {
+            Picasso.with(mContext).load(coffeeshops.getImage()).into(mCoffeShopsImageView);
             mCoffeeTextView.setText(coffeeshops.getName());
             mRatingTextView.setText("Rating: " + coffeeshops.getRating() + "/5");
             mReviewCountTextView.setText("Review Count: " + coffeeshops.getReviewCount());
