@@ -10,25 +10,30 @@
     tools:context="com.example.guest.cofeshop.DisplayActivity"
     android:backgroundTintMode="screen">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Popular Coffee Shops"
-        android:id="@+id/coffeeNamesTextView"
-        android:layout_centerHorizontal="true"
-        android:paddingTop="5sp"
-        android:paddingBottom="25sp"
-        android:textColor="#1d1801"
-        android:textSize="25dp"
-        android:textStyle="bold"/>
-
-    <ListView
+    <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/listView"
-        android:background="#7774580b"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:textSize="15dp"
-        android:layout_below="@+id/coffeeNamesTextView" />
+        android:layout_height="match_parent"
+        android:id="@+id/recyclerView"/>
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Popular Coffee Shops"-->
+        <!--android:id="@+id/coffeeNamesTextView"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:paddingTop="5sp"-->
+        <!--android:paddingBottom="25sp"-->
+        <!--android:textColor="#1d1801"-->
+        <!--android:textSize="25dp"-->
+        <!--android:textStyle="bold"/>-->
+
+    <!--<ListView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/listView"-->
+        <!--android:background="#7774580b"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:textSize="15dp"-->
+        <!--android:layout_below="@+id/coffeeNamesTextView" />-->
 </RelativeLayout>

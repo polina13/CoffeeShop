@@ -10,14 +10,14 @@ public class Coffee {
     private double mRating;
 //    private String mComments;
     private ArrayList<String> mAddress = new ArrayList<>();
-    private String mCategories;
+    private ArrayList<String> mCategories = new ArrayList<>();
     private String mMenu;
 //    private String mBrand; //check JSON FILE as well
     private int mReviewCount;
 
     public Coffee() {}
 
-    public Coffee(String name, String phone, String website, String image, double rating, ArrayList<String> address, String categories, String menu, int reviewCount ) {
+    public Coffee(String name, String phone, String website, String image, double rating, ArrayList<String> address, ArrayList<String> categories, String menu, int reviewCount ) {
 
         this.mName = name;
         this.mPhone = phone;
@@ -62,7 +62,7 @@ public class Coffee {
         return mAddress;
     }
 
-    public String getCategories(String categories) {
+    public ArrayList<String> getCategories(String categories) {
         if (categories == "coffeeroasteries") {
         }
         return mCategories;

@@ -64,7 +64,12 @@ public class YelpService {
                     for (int y = 0; y < addressJSON.length(); y++) {
                         address.add(addressJSON.get(y).toString());
                     }
-                    String categories = coffeeShopJSON.getString("categories");
+                    ArrayList<String> categories = new ArrayList<>();
+                    JSONArray categoriesJSON = yelpSearchJSON.getJSONArray("categories");
+
+                    for (int y = 0; y < categoriesJSON.length(); y++) {
+                        categories.add(categoriesJSON.getJSONArray(y).get(0).toString());
+                    }
 //                    double latitude = restaurantJSON.getJSONObject("location")
 //                            .getJSONObject("coordinate").getDouble("latitude");
 //                    double longitude = restaurantJSON.getJSONObject("location")
