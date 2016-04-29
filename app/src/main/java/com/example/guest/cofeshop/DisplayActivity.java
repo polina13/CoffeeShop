@@ -3,25 +3,32 @@ package com.example.guest.cofeshop;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.widget.TextView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
 public class DisplayActivity extends AppCompatActivity {
-    private TextView mCoffeeNamesTextView;
+//    private TextView mCoffeeNamesTextView;
     public static final String TAG = CoffeeShopsActivity.class.getSimpleName();
+    @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
+    private CoffeeShopsListAdapter mAdapter;
+    public ArrayList<Coffee> mCoffeeShops = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coffee_shops);
 
-        mCoffeeNamesTextView = (TextView) findViewById(R.id.coffeeNamesTextView);
+        ButterKnife.bind(this);
 
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
@@ -29,27 +36,48 @@ public class DisplayActivity extends AppCompatActivity {
     }
 
     private void getCoffeeShops(String location) {
-        YelpService.findCoffeeShops(location, new Callback() {
+        final YelpService service = new YelpService();
+        service.findCoffeeShops(location, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
                 e.printStackTrace();
             }
 
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                try {
-                    String jsonYelpData = response.body().string();
-                    if (response.isSuccessful()) {
-                        Log.v("JSON DATA", jsonYelpData);
+            public void onResponse(Call call, Response response) {
+                mCoffeeShops = service.processResults(response);
+
+                DisplayActivity.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mAdapter = new CoffeeShopsListAdapter(getApplicationContext(), mCoffeeShops);
+                        mRecyclerView.setAdapter(mAdapter);
+                        RecyclerView.LayoutManager layoutManager =
+                                new LinearLayoutManager(DisplayActivity.this);
+                        mRecyclerView.setLayoutManager(layoutManager);
+                        mRecyclerView.setHasFixedSize(true);
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                });
             }
         });
     }
+}
 
- }
+//            @Override
+//            public void onResponse(Call call, Response response) {
+//                try {
+//                    String jsonYelpData = response.body().string();
+//                    if (response.isSuccessful()) {
+//                        Log.v("JSON DATA", jsonYelpData);
+//                    }
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        });
+//    }
+//
+// }
 //    private ListView mListView;
 //    private String[] shops = new String[] {"Ava Roasteria", "Peet's Coffee",
 //            "Coffeehouse Northwest", "Umbria Caffe", "Spella Caffe", "Stump Town",

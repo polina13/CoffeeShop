@@ -28,8 +28,6 @@ public class Coffee {
         this.mCategories = categories;
         this.mMenu = menu;
         this.mReviewCount = reviewCount;
-
-
     }
 
     private String getLargeImage(String image) {
