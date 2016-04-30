@@ -1,14 +1,10 @@
 package com.example.guest.cofeshop;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
-import com.example.guest.cofeshop.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -32,4 +28,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(intent);
     }
 }
+
+//to do
+//geolocation hopefully
+//desing
+//fragment
+//impliments
+//pager adapter
 

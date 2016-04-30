@@ -61,6 +61,7 @@ public class CoffeeShopsListAdapter extends RecyclerView.Adapter<CoffeeShopsList
             mCoffeeTextView.setText(coffeeshops.getName());
             mRatingTextView.setText("Rating: " + coffeeshops.getRating() + "/5");
             mReviewCountTextView.setText("Review Count: " + coffeeshops.getReviewCount());
+            
         }
     }
 }

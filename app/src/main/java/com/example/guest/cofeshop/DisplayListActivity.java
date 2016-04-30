@@ -50,8 +50,7 @@ public class DisplayListActivity extends AppCompatActivity {
                     public void run() {
                         mAdapter = new CoffeeShopsListAdapter(getApplicationContext(), mCoffeeShops);
                         mRecyclerView.setAdapter(mAdapter);
-                        RecyclerView.LayoutManager layoutManager =
-                                new LinearLayoutManager(DisplayListActivity.this);
+                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(DisplayListActivity.this);
                         mRecyclerView.setLayoutManager(layoutManager);
                         mRecyclerView.setHasFixedSize(true);
                     }
