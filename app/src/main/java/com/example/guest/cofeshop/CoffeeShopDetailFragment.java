@@ -1,6 +1,8 @@
 package com.example.guest.cofeshop;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -20,14 +22,17 @@ import butterknife.ButterKnife;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CoffeeShopDetailFragment extends Fragment {
-        @Bind(R.id.coffeeShopsImageView) ImageView mImageLabel;
-        @Bind(R.id.coffeeTextView) TextView mNameLabel;
-        @Bind(R.id.ratingTextView) TextView mRatingLabel;
-        @Bind(R.id.websiteTextView) TextView mWebsiteLabel;
-        @Bind(R.id.phoneTextView) TextView mPhoneLabel;
-        @Bind(R.id.addressTextView) TextView mAddressLabel;
-        @Bind(R.id.saveCoffeeShopButton) TextView mSaveCoffeeShopButton;
+public class CoffeeShopDetailFragment extends Fragment implements View.OnClickListener {
+    @Bind(R.id.coffeeShopsImageView) ImageView mImageLabel;
+    @Bind(R.id.coffeeTextView) TextView mNameLabel;
+    @Bind(R.id.ratingTextView) TextView mRatingLabel;
+    @Bind(R.id.websiteTextView) TextView mWebsiteLabel;
+    @Bind(R.id.phoneTextView) TextView mPhoneLabel;
+    @Bind(R.id.addressTextView) TextView mAddressLabel;
+    @Bind(R.id.menuTextView) TextView mMenuLabel;
+    @Bind(R.id.saveCoffeeShopButton) TextView mSaveCoffeeShopButton;
+//    @Bind(R.id.reviewButton) TextView mReviewButton;
+
 
     private Coffee mCoffeeShop;
 
@@ -55,6 +60,34 @@ public class CoffeeShopDetailFragment extends Fragment {
         mRatingLabel.setText("Rating: " + Double.toString(mCoffeeShop.getRating()) + "/5");
         mPhoneLabel.setText(mCoffeeShop.getPhone());
         mAddressLabel.setText(android.text.TextUtils.join(", ", mCoffeeShop.getAddress()));
+        mMenuLabel.setText("Menu Provider: " + mCoffeeShop.getMenu());
+
+
+        mPhoneLabel.setOnClickListener(this);
+        mAddressLabel.setOnClickListener(this);
+
         return view;
     }
+
+    @Override
+    public void onClick(View v) {
+//        if (v == mWebsiteLabel) {
+//            Intent webIntent = new Intent(Intent.ACTION_VIEW,
+//                    Uri.parse(mRestaurant.getWebsite()));
+//            startActivity(webIntent);
+//        }
+        if (v == mPhoneLabel) {
+            Intent phoneIntent = new Intent(Intent.ACTION_DIAL,
+                    Uri.parse("tel:" + mCoffeeShop.getPhone()));
+            startActivity(phoneIntent);
+        }
+        if (v == mAddressLabel) {
+            Intent mapIntent = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("geo:" + mCoffeeShop.getLatitude()
+                            + "," + mCoffeeShop.getLongitude()
+                            + "?q=(" + mCoffeeShop.getName() + ")"));
+            startActivity(mapIntent);
+        }
+    }
 }
+

@@ -13,7 +13,7 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:background="#1b310205"
+        android:background="#43eee5b1"
         android:layout_height="match_parent">
 
         <TextView
@@ -23,7 +23,7 @@
             android:textSize="25dp"
             android:textStyle="bold"
             android:text="Coffee Shop"
-            android:textColor="#63030d"/>
+            android:textColor="#2a2102"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -39,7 +39,7 @@
             android:layout_alignParentRight="true"
             android:textColor="#c3292801"
             android:textStyle="bold"
-            android:textSize="17sp" />
+            android:textSize="15sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -51,7 +51,10 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textStyle="bold"
-            android:textSize="17sp" />
+            android:textSize="15sp" />
+
+
+
         </RelativeLayout>
     </LinearLayout>
 </LinearLayout>

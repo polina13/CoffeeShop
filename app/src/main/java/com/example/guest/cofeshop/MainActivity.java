@@ -29,10 +29,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 }
 
-//to do
-//geolocation hopefully
-//desing
-//fragment
-//impliments
-//pager adapter
 

@@ -79,4 +79,4 @@ public class CoffeeShopsListAdapter extends RecyclerView.Adapter<CoffeeShopsList
         }
     }
 }
-//TRY TO FIND AND THE DISPLAY THE COMMENTS
+
