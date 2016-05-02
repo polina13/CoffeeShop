@@ -1,6 +1,7 @@
 package com.example.guest.cofeshop;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +9,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.guest.cofeshop.ui.CoffeeShopsDetailActivity;
 import com.squareup.picasso.Picasso;
+
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
@@ -54,15 +58,25 @@ public class CoffeeShopsListAdapter extends RecyclerView.Adapter<CoffeeShopsList
             super(itemView);
             ButterKnife.bind(this, itemView);
             mContext = itemView.getContext();
-        }
+            itemView.setOnClickListener(new View.OnClickListener() {
 
-        public void bindCoffeeShop(Coffee coffeeshops) {
-            Picasso.with(mContext).load(coffeeshops.getImage()).into(mCoffeShopsImageView);
-            mCoffeeTextView.setText(coffeeshops.getName());
-            mRatingTextView.setText("Rating: " + coffeeshops.getRating() + "/5");
-            mReviewCountTextView.setText("Review Count: " + coffeeshops.getReviewCount());
-            
+            @Override
+            public void onClick(View v) {
+                int itemPosition = getLayoutPosition();
+                Intent intent = new Intent(mContext, CoffeeShopsDetailActivity.class);
+                intent.putExtra("position", itemPosition + "");
+                intent.putExtra("coffeeShops", Parcels.wrap(mCoffeeShops));
+                mContext.startActivity(intent);
+            }
+        });
+    }
+
+        public void bindCoffeeShop(Coffee coffee) {
+            Picasso.with(mContext).load(coffee.getImage()).into(mCoffeShopsImageView);
+            mCoffeeTextView.setText(coffee.getName());
+            mRatingTextView.setText("Rating: " + coffee.getRating() + "/5");
+            mReviewCountTextView.setText("Review Count: " + coffee.getReviewCount());
         }
     }
 }
-
+//TRY TO FIND AND THE DISPLAY THE COMMENTS

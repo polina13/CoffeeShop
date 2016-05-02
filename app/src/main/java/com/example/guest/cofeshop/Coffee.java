@@ -1,7 +1,9 @@
 package com.example.guest.cofeshop;
-
+import org.parceler.Parcel;
 import java.util.ArrayList;
 
+
+@Parcel
 public class Coffee {
     private String mName;
     private String mPhone;
