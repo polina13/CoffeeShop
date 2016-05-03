@@ -24,6 +24,7 @@ android {
         it.buildConfigField 'String', 'YELP_CONSUMER_SECRET', Yelp_Consumer_Secret
         it.buildConfigField 'String', 'YELP_TOKEN', Yelp_Token
         it.buildConfigField 'String', 'YELP_TOKEN_SECRET', Yelp_Token_Secret
+        it.buildConfigField 'String', 'GOOGLE_MAPS_KEY', Google_Maps_Key
     }
 }
 
@@ -44,6 +45,8 @@ dependencies {
     androidTestCompile('com.android.support.test:runner:0.3') {
         exclude group: 'com.android.support', module: 'support-annotations'
     }
+    apt 'org.parceler:parceler:1.1.1'
+
     compile 'com.android.support:recyclerview-v7:23.3.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.squareup.okhttp3:okhttp:3.2.0'
@@ -51,7 +54,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.android.support:support-v4:23.3.0'
+    compile 'com.google.android.gms:play-services-maps:8.4.0'
+    compile 'com.google.android.gms:play-services-location:8.4.0'
     compile 'org.parceler:parceler-api:1.1.1'
-    apt 'org.parceler:parceler:1.1.1'
-
 }

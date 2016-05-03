@@ -40,8 +40,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rating:4.5/5"
-                android:id="@+id/ratingTextView"
                 android:layout_alignTop="@+id/coffeeTextView"
+                android:id="@+id/ratingTextView"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:textStyle="bold" />
@@ -56,17 +56,17 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="30dp"
+        android:paddingLeft="20dp"
         android:paddingTop="20dp"
-        android:paddingRight="30dp"
+        android:paddingRight="20dp"
         android:layout_gravity="left|top"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:id="@+id/linearLayout"
         android:weightSum="1"
         android:background="#ebdfbd"
-        android:layout_above="@+id/websiteTextView"
-        android:layout_alignParentTop="true">
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/websiteTextView">
 
         <TextView
             android:layout_width="wrap_content"
@@ -105,6 +105,17 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginBottom="15dp" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reviews"
+            android:id="@+id/reviewButton"
+            android:textSize="20sp"
+            android:background="#9642020a"
+            android:layout_above="@+id/saveCoffeeShopButton"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
 
         <TextView
             android:layout_width="215dp"
@@ -114,9 +125,22 @@
             android:id="@+id/websiteTextView"
             android:textSize="15sp"
             android:textStyle="bold"
+            android:padding="10dp"
             android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:padding="10dp" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="215dp"
+            android:layout_height="wrap_content"
+            android:text="Menu"
+            android:id="@+id/menuTextView"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_alignTop="@+id/websiteTextView"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
     </RelativeLayout>
     </LinearLayout>

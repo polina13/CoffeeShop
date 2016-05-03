@@ -18,9 +18,7 @@ import okhttp3.Response;
 import se.akerfeldt.okhttp.signpost.OkHttpOAuthConsumer;
 import se.akerfeldt.okhttp.signpost.SigningInterceptor;
 
-/**
- * Created by alexnenchev on 4/29/16.
- */
+
 public class YelpService {
     public static void findCoffeeShops(String location, Callback callback) {
         String CONSUMER_KEY = Constants.YELP_CONSUMER_KEY;
@@ -66,20 +64,23 @@ public class YelpService {
                     for (int y = 0; y < addressJSON.length(); y++) {
                         address.add(addressJSON.get(y).toString());
                     }
+                    double latitude = coffeeShopJSON.getJSONObject("location")
+                            .getJSONObject("coordinate").getDouble("latitude");
+                    double longitude = coffeeShopJSON.getJSONObject("location")
+                            .getJSONObject("coordinate").getDouble("longitude");
                     ArrayList<String> categories = new ArrayList<>();
                     JSONArray categoriesJSON = coffeeShopJSON.getJSONArray("categories");
 
                     for (int y = 0; y < categoriesJSON.length(); y++) {
                         categories.add(categoriesJSON.getJSONArray(y).get(0).toString());
                     }
-//                    double latitude = restaurantJSON.getJSONObject("location")
-//                            .getJSONObject("coordinate").getDouble("latitude");
-//                    double longitude = restaurantJSON.getJSONObject("location")
-//                            .getJSONObject("coordinate").getDouble("longitude");
+
+
+                    String snippetText = coffeeShopJSON.getString("snippet_text");
                     String menu = coffeeShopJSON.optString("menu_provider", "Menu provider not included");
                     int reviewCount = coffeeShopJSON.getInt("review_count");
                     Log.d("json", yelpSearchJSON.toString());
-                    Coffee coffee = new Coffee(name, phone, website, image, rating, address, categories, menu, reviewCount);
+                    Coffee coffee = new Coffee(name, phone, website, image, rating, address, latitude, longitude, categories, menu, reviewCount, snippetText );
                     coffeesShops.add(coffee);
                 }
             }
