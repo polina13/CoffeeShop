@@ -1,12 +1,10 @@
 # CoffeeShop
-## Independent Project for Android Class at Epicodus, 04/22/2016
+## Independent Project for Android Class at Epicodus, 05/01/2016
 
 ### Description
-This is an independent project which will be developed fully throughout period of 4 weeks. The CoffeeShop is an Android app 
-that will allow the user the view the cofee shops near by depending on the user's current location. It will also provide an
-option for the user to read the customers' review which were posted in Yelp.
+This is an Android Independent project which will be developed fully throughout period of 4 weeks. The CoffeeShop is an Android app that will allow the user the view the cofee shops near by depending on the user's current location. It will also provide an option for the user to read the customers' review which were posted in Yelp. It uses JSON and data models for coffee shop with specific categories. RecyclerView is used to list all open coffee shops based on the location input. The app implements implicit intents to show particular Coffee Shop location and phone number.
 The API that are used are:
-* Google API, which will define the proximity from the current location to the shop
+
 * Yelp API, which will provide the user with reviews and comments for the shop visited
 
 #### Installation
@@ -18,7 +16,6 @@ The API that are used are:
 * API'S
 * MVC
 * GitHub
-
 
 ##### License
 
