@@ -31,8 +31,6 @@ public class CoffeeShopDetailFragment extends Fragment implements View.OnClickLi
     @Bind(R.id.addressTextView) TextView mAddressLabel;
     @Bind(R.id.menuTextView) TextView mMenuLabel;
     @Bind(R.id.saveCoffeeShopButton) TextView mSaveCoffeeShopButton;
-//    @Bind(R.id.reviewButton) TextView mReviewButton;
-
 
     private Coffee mCoffeeShop;
 
@@ -62,7 +60,6 @@ public class CoffeeShopDetailFragment extends Fragment implements View.OnClickLi
         mAddressLabel.setText(android.text.TextUtils.join(", ", mCoffeeShop.getAddress()));
         mMenuLabel.setText("Menu Provider: " + mCoffeeShop.getMenu());
 
-
         mPhoneLabel.setOnClickListener(this);
         mAddressLabel.setOnClickListener(this);
 
@@ -71,11 +68,6 @@ public class CoffeeShopDetailFragment extends Fragment implements View.OnClickLi
 
     @Override
     public void onClick(View v) {
-//        if (v == mWebsiteLabel) {
-//            Intent webIntent = new Intent(Intent.ACTION_VIEW,
-//                    Uri.parse(mRestaurant.getWebsite()));
-//            startActivity(webIntent);
-//        }
         if (v == mPhoneLabel) {
             Intent phoneIntent = new Intent(Intent.ACTION_DIAL,
                     Uri.parse("tel:" + mCoffeeShop.getPhone()));

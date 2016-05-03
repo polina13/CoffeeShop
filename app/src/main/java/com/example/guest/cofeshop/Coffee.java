@@ -1,5 +1,7 @@
 package com.example.guest.cofeshop;
+
 import org.parceler.Parcel;
+
 import java.util.ArrayList;
 
 
@@ -13,9 +15,9 @@ public class Coffee {
     private ArrayList<String> mAddress = new ArrayList<>();
     private double mLatitude;
     private double mLongitude;
+//    private LatLng mLatlng;
     private ArrayList<String> mCategories = new ArrayList<>();
     private String mMenu;
-//    private String mBrand; //check JSON FILE as well
     private int mReviewCount;
     private String snippetText;
 
@@ -32,6 +34,7 @@ public class Coffee {
         this.mLatitude = latitude;
         this.mLongitude = longitude;
         this.mCategories = categories;
+//        this.mLatlng = latlng;
         this.snippetText = snippetText;
         this.mMenu = menu;
         this.mReviewCount = reviewCount;
@@ -76,6 +79,8 @@ public class Coffee {
     public ArrayList<String> getCategories(String categories) {
         return mCategories;
     }
+
+//    public LatLng getLatlng() { return mLatlng; }
 
     public String getSnippetText() {
         return snippetText;
