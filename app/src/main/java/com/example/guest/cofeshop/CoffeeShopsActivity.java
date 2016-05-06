@@ -1,24 +1,25 @@
 package com.example.guest.cofeshop;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class CoffeeShopsActivity extends AppCompatActivity implements View.OnClickListener{
-
-    private SharedPreferences mSharedPreferences;
-    private SharedPreferences.Editor mEditor;
-
+    private Firebase mSearchedLocationRef;
+    private ValueEventListener mSearchedLocationRefListener;
+    
     @Bind(R.id.searchCoffeeButton) Button mSearchButton;
     @Bind(R.id.coffeePlacesEditText) EditText mCoffeePlacesEditText;
 
@@ -28,18 +29,35 @@ public class CoffeeShopsActivity extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.activity_coffee_shops);
         ButterKnife.bind(this);
 
-        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        mEditor = mSharedPreferences.edit();
         mSearchButton.setOnClickListener(this);
+        mSearchedLocationRef = new Firebase(Constants.FIREBASE_URL_SEARCHED_LOCATION);
+
+        mSearchedLocationRefListener = mSearchedLocationRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String locations = dataSnapshot.getValue().toString();
+                Log.d("Location updated", locations);
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
+
     }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        mSearchedLocationRef.removeEventListener(mSearchedLocationRefListener);
+    }
+
 
     @Override
     public void onClick(View view) {
         if (view == mSearchButton) {
             String location = mCoffeePlacesEditText.getText().toString();
-//            if(!(location).equals("")) {
-//                addToSharedPreferences(location);
-//            }
             saveLocationToFirebase(location);
             Intent intent = new Intent(CoffeeShopsActivity.this, DisplayListActivity.class);
             intent.putExtra("location", location);
@@ -47,9 +65,6 @@ public class CoffeeShopsActivity extends AppCompatActivity implements View.OnCli
         }
     }
 
-//    private void addToSharedPreferences(String location) {
-//        mEditor.putString(Constants.PREFERENCES_LOCATION_KEY, location).apply();
-//    }
 
     public void saveLocationToFirebase(String location) {
         Firebase searchedLocationRef = new Firebase(Constants.FIREBASE_URL_SEARCHED_LOCATION);

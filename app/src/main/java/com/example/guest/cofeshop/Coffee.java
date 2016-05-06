@@ -3,81 +3,84 @@ package com.example.guest.cofeshop;
 import org.parceler.Parcel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 @Parcel
 public class Coffee {
-    private String mName;
-    private String mPhone;
-    private String mWebsite;
-    private String mImage;
-    private double mRating;
-    private ArrayList<String> mAddress = new ArrayList<>();
-    private double mLatitude;
-    private double mLongitude;
-//    private LatLng mLatlng;
-    private ArrayList<String> mCategories = new ArrayList<>();
-    private String mMenu;
-    private int mReviewCount;
-    private String snippetText;
+    String name;
+    String phone;
+    String website;
+    String image;
+    double rating;
+    List<String> address = new ArrayList<>();
+    double latitude;
+    double longitude;
+//    LatLng mLatlng;
+    List<String> categories = new ArrayList<>();
+    String menu;
+    int reviewCount;
+    String snippetText;
+
 
     public Coffee() {}
 
     public Coffee(String name, String phone, String website, String image, double rating, ArrayList<String> address, double latitude, double longitude, ArrayList<String> categories, String menu, int reviewCount, String snippetText ) {
 
-        this.mName = name;
-        this.mPhone = phone;
-        this.mWebsite = website;
-        mImage = getLargeImage(image);
-        this.mRating = rating;
-        this.mAddress = address;
-        this.mLatitude = latitude;
-        this.mLongitude = longitude;
-        this.mCategories = categories;
+        this.name = name;
+        this.phone = phone;
+        this.website = website;
+        image = getLargeImage(image);
+        this.rating = rating;
+        this.address = address;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.categories = categories;
 //        this.mLatlng = latlng;
         this.snippetText = snippetText;
-        this.mMenu = menu;
-        this.mReviewCount = reviewCount;
+        this.menu = menu;
+        this.reviewCount = reviewCount;
 
     }
 
-    private String getLargeImage(String image) {
+    String getLargeImage(String image) {
         String largeImage = image.substring(0, image.length() - 6).concat("o.jpg");
         return largeImage;
     }
 
     public String getName () {
-            return mName;
+            return name;
     }
 
     public String getPhone() {
-        return mPhone;
+        return phone;
     }
 
 
     public String getWebsite() {
-        return mWebsite;
+        return website;
     }
 
     public String getImage() {
-        return mImage;
+        return image;
     }
 
     public double getRating() {
-        return mRating;
+        return rating;
     }
 
 
-    public ArrayList<String> getAddress() {
-        return mAddress;
+    public List<String> getAddress() {
+        return address;
     }
 
-    public double getLatitude() { return  mLatitude; }
+    public double getLatitude() { return  latitude; }
 
-    public double getLongitude() { return  mLongitude; }
+    public double getLongitude() { return  longitude; }
 
-    public ArrayList<String> getCategories(String categories) {
-        return mCategories;
+    public List<String> getCategories() {
+
+        return categories;
     }
 
 //    public LatLng getLatlng() { return mLatlng; }
@@ -87,11 +90,11 @@ public class Coffee {
     }
 
     public String getMenu() {
-        return mMenu;
+        return menu;
     }
 
     public int getReviewCount() {
-        return mReviewCount;
+        return reviewCount;
     }
 
 }
