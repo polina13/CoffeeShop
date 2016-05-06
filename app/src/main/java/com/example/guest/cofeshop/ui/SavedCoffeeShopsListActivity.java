@@ -45,3 +45,4 @@ public class SavedCoffeeShopsListActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
     }
 }
+

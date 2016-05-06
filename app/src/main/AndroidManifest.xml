@@ -27,7 +27,10 @@
         <activity android:name=".CoffeeShopsActivity" />
         <activity android:name=".DisplayListActivity" />
         <activity android:name=".ui.CoffeeShopsDetailActivity" />
-        <activity android:name=".ui.SavedCoffeeShopsListActivity"></activity>
+        <activity android:name=".ui.SavedCoffeeShopsListActivity" />
+        <activity android:name=".ui.CreateProfileActivity" />
+        <activity android:name=".ui.SavedCoffeeShopListActivity" />
+        <activity android:name=".ui.LoginProfileActivity"></activity>
     </application>
 
 </manifest>
