@@ -16,13 +16,11 @@ public class Coffee {
     List<String> address = new ArrayList<>();
     double latitude;
     double longitude;
-//    LatLng mLatlng;
     List<String> categories = new ArrayList<>();
     String menu;
     int reviewCount;
     String snippetText;
     String pushID;
-
 
     public Coffee() {}
 
@@ -31,17 +29,15 @@ public class Coffee {
         this.name = name;
         this.phone = phone;
         this.website = website;
-        image = getLargeImage(image);
+        this.image = getLargeImage(image);
         this.rating = rating;
         this.address = address;
         this.latitude = latitude;
         this.longitude = longitude;
         this.categories = categories;
-//        this.mLatlng = latlng;
         this.snippetText = snippetText;
         this.menu = menu;
         this.reviewCount = reviewCount;
-
 
     }
 
@@ -81,11 +77,8 @@ public class Coffee {
     public double getLongitude() { return  longitude; }
 
     public List<String> getCategories() {
-
         return categories;
     }
-
-//    public LatLng getLatlng() { return mLatlng; }
 
     public String getSnippetText() {
         return snippetText;
@@ -98,9 +91,5 @@ public class Coffee {
     public int getReviewCount() {
         return reviewCount;
     }
-
-//    public String getPushID() {
-//        return pushID;
-//    }
 
 }
