@@ -25,6 +25,9 @@ import butterknife.ButterKnife;
  * A simple {@link Fragment} subclass.
  */
 public class CoffeeShopDetailFragment extends Fragment implements View.OnClickListener {
+    private static final int MAX_WIDTH = 400;
+    private static final int MAX_HEIGHT = 300;
+
     @Bind(R.id.coffeeShopsImageView) ImageView mImageLabel;
     @Bind(R.id.coffeeTextView) TextView mNameLabel;
     @Bind(R.id.ratingTextView) TextView mRatingLabel;
@@ -57,7 +60,7 @@ public class CoffeeShopDetailFragment extends Fragment implements View.OnClickLi
         ButterKnife.bind(this, view);
         mSaveCoffeeShopButton.setOnClickListener(this);
 
-        Picasso.with(view.getContext()).load(mCoffeeShop.getImage()).into(mImageLabel);
+        Picasso.with(view.getContext()).load(mCoffeeShop.getImage()).resize(MAX_WIDTH, MAX_HEIGHT).centerCrop().into(mImageLabel);
         mNameLabel.setText(mCoffeeShop.getName());
         mRatingLabel.setText("Rating: " + Double.toString(mCoffeeShop.getRating()) + "/5");
         mPhoneLabel.setText(mCoffeeShop.getPhone());

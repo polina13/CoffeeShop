@@ -42,7 +42,7 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="125dp"
+            android:layout_height="111dp"
             android:id="@+id/linearLayout"
             android:weightSum="1"
             android:background="#ebdfbd"
@@ -79,15 +79,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="View On Web"
-            android:drawableLeft="@drawable/ic_web_black_18dp"
-            android:id="@+id/websiteTextView"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:padding="10dp"
-            android:layout_centerVertical="true"
+            android:text="Coffee"
+            android:id="@+id/coffeeTextView"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            android:textColor="#bfaa80" />
 
         <TextView
         android:layout_width="wrap_content"
@@ -118,13 +116,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Coffee"
-            android:id="@+id/coffeeTextView"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:textSize="23sp"
+            android:text="View On Web"
+            android:drawableLeft="@drawable/ic_web_black_18dp"
+            android:id="@+id/websiteTextView"
+            android:textSize="15sp"
             android:textStyle="bold"
-            android:textColor="#bfaa80" />
+            android:padding="10dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         <RelativeLayout
         android:layout_width="match_parent"
@@ -142,7 +142,6 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
                 android:textColor="#eee48c" />
         </RelativeLayout>
     </LinearLayout>

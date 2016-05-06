@@ -16,6 +16,28 @@
         android:layout_alignParentStart="true"/>
 
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search..."
+        android:id="@+id/searchCoffeeButton"
+        android:layout_alignLeft="@+id/imageView"
+        android:layout_alignStart="@+id/imageView"
+        android:visibility="visible"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My Favorite Coffee Shops"
+        android:id="@+id/savedCoffeeButton"
+        android:background="@color/colorAccent"
+        android:visibility="visible"
+        android:layout_above="@+id/searchCoffeeButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,14 +49,5 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="124dp"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Search..."
-        android:id="@+id/searchCoffeeButton"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/imageView"
-        android:layout_alignStart="@+id/imageView"/>
 
 </RelativeLayout>

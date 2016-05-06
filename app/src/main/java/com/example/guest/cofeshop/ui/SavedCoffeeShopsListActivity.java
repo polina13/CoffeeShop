@@ -25,7 +25,7 @@ public class SavedCoffeeShopsListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_restaurants);
+        setContentView(R.layout.activity_display);
         ButterKnife.bind(this);
 
         mFirebaseCoffeeShopsRef = new Firebase(Constants.FIREBASE_URL_COFFEESHOPS);

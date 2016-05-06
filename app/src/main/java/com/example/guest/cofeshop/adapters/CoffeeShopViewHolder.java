@@ -23,6 +23,9 @@ import butterknife.ButterKnife;
  * Created by alexnenchev on 5/6/16.
  */
 public class CoffeeShopViewHolder extends RecyclerView.ViewHolder {
+    private static final int MAX_WIDTH = 200;
+    private static final int MAX_HEIGHT = 200;
+
     @Bind(R.id.coffeShopsImageView) ImageView mCoffeShopsImageView;
     @Bind(R.id.coffeeTextView) TextView mCoffeeTextView;
     @Bind(R.id.ratingTextView) TextView mRatingTextView;
