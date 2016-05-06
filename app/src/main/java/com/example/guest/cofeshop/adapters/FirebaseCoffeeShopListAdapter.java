@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.example.guest.cofeshop.Coffee;
 import com.example.guest.cofeshop.R;
+import com.example.guest.cofeshop.util.FirebaseRecyclerAdapter;
 import com.firebase.client.Query;
 
 public class FirebaseCoffeeShopListAdapter extends FirebaseRecyclerAdapter<CoffeeShopViewHolder,Coffee> {
