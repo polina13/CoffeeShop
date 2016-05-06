@@ -10,7 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.firebase.client.Firebase;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
@@ -53,6 +55,7 @@ public class CoffeeShopDetailFragment extends Fragment implements View.OnClickLi
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_coffee_shop_detail, container, false);
         ButterKnife.bind(this, view);
+        mSaveCoffeeShopButton.setOnClickListener(this);
 
         Picasso.with(view.getContext()).load(mCoffeeShop.getImage()).into(mImageLabel);
         mNameLabel.setText(mCoffeeShop.getName());
@@ -78,11 +81,11 @@ public class CoffeeShopDetailFragment extends Fragment implements View.OnClickLi
             startActivity(phoneIntent);
         }
         if (v == mAddressLabel) {
-            Intent mapIntent = new Intent(Intent.ACTION_VIEW,
+            Intent addressIntent = new Intent(Intent.ACTION_VIEW,
                     Uri.parse("geo:" + mCoffeeShop.getLatitude()
                             + "," + mCoffeeShop.getLongitude()
                             + "?q=(" + mCoffeeShop.getName() + ")"));
-            startActivity(mapIntent);
+            startActivity(addressIntent);
         }
 //        if (v == mSnippetTextView) {
 //            Intent snippetTextIntent = new Intent(Intent.ACTION_VIEW,
@@ -93,6 +96,12 @@ public class CoffeeShopDetailFragment extends Fragment implements View.OnClickLi
             Intent webIntent = new Intent(Intent.ACTION_VIEW,
                     Uri.parse(mCoffeeShop.getWebsite()));
             startActivity(webIntent);
+        }
+
+        if (v == mSaveCoffeeShopButton) {
+            Firebase ref = new Firebase(Constants.FIREBASE_URL_COFFEESHOPS);
+            ref.push().setValue(mCoffeeShop);
+            Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
         }
     }
 }

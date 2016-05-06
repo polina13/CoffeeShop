@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.guest.cofeshop.adapters.CoffeeShopViewHolder;
 import com.example.guest.cofeshop.ui.CoffeeShopsDetailActivity;
 import com.squareup.picasso.Picasso;
 
@@ -33,6 +34,7 @@ public class CoffeeShopsListAdapter extends RecyclerView.Adapter<CoffeeShopsList
     public CoffeeShopsListAdapter.CoffeeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.coffee_list_display, parent, false);
         CoffeeViewHolder viewHolder = new CoffeeViewHolder(view);
+        CoffeeShopViewHolder viewHolder = new CoffeeShopViewHolder(view, mCoffeeShops);
         return viewHolder;
     }
 
