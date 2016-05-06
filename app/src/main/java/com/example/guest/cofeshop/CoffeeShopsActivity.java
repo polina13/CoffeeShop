@@ -3,14 +3,14 @@ package com.example.guest.cofeshop;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 
 import com.example.guest.cofeshop.ui.SavedCoffeeShopsListActivity;
-import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 
 import butterknife.Bind;
@@ -21,7 +21,6 @@ public class CoffeeShopsActivity extends AppCompatActivity implements View.OnCli
     private ValueEventListener mSearchedLocationRefListener;
     
     @Bind(R.id.searchCoffeeButton) Button mSearchButton;
-    @Bind(R.id.coffeePlacesEditText) EditText mCoffeePlacesEditText;
     @Bind(R.id.savedCoffeeButton) Button mSavedCoffeeButton;
 
     @Override
@@ -34,41 +33,24 @@ public class CoffeeShopsActivity extends AppCompatActivity implements View.OnCli
         mSavedCoffeeButton.setOnClickListener(this);
 
         mSearchedLocationRef = new Firebase(Constants.FIREBASE_URL_SEARCHED_LOCATION);
-
-        mSearchedLocationRefListener = mSearchedLocationRef.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                String locations = dataSnapshot.getValue().toString();
-//                Log.d("Location updated", locations);
-//            }
-
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onCancelled(FirebaseError firebaseError) {
-
-            }
-        });
-
     }
 
     @Override
-    protected void onDestroy(){
-        super.onDestroy();
-        mSearchedLocationRef.removeEventListener(mSearchedLocationRefListener);
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_search, menu);
+        return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     public void onClick(View view) {
         if (view == mSearchButton) {
-            String location = mCoffeePlacesEditText.getText().toString();
-            saveLocationToFirebase(location);
             Intent intent = new Intent(CoffeeShopsActivity.this, DisplayListActivity.class);
-            intent.putExtra("location", location);
             startActivity(intent);
         }
         if (view == mSavedCoffeeButton) {
@@ -78,10 +60,10 @@ public class CoffeeShopsActivity extends AppCompatActivity implements View.OnCli
     }
 
 
-    public void saveLocationToFirebase(String location) {
-        Firebase searchedLocationRef = new Firebase(Constants.FIREBASE_URL_SEARCHED_LOCATION);
-        searchedLocationRef.push().setValue(location);
-    }
+//    public void saveLocationToFirebase(String location) {
+//        Firebase searchedLocationRef = new Firebase(Constants.FIREBASE_URL_SEARCHED_LOCATION);
+//        searchedLocationRef.push().setValue(location);
+//    }
 }
 
 

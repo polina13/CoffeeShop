@@ -80,7 +80,7 @@ public class YelpService {
                     String menu = coffeeShopJSON.optString("menu_provider", "Menu provider not included");
                     int reviewCount = coffeeShopJSON.getInt("review_count");
                     Log.d("json", yelpSearchJSON.toString());
-                    Coffee coffee = new Coffee(name, phone, website, image, rating, address, latitude, longitude, categories, menu, reviewCount, snippetText );
+                    Coffee coffee = new Coffee(name, phone, website, image, rating, address, latitude, longitude, categories, menu, reviewCount, snippetText);
                     coffeesShops.add(coffee);
                 }
             }

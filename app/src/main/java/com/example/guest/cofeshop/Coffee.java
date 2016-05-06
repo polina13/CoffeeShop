@@ -26,7 +26,7 @@ public class Coffee {
 
     public Coffee() {}
 
-    public Coffee(String name, String phone, String website, String image, double rating, ArrayList<String> address, double latitude, double longitude, ArrayList<String> categories, String menu, int reviewCount, String snippetText, String pushID) {
+    public Coffee(String name, String phone, String website, String image, double rating, ArrayList<String> address, double latitude, double longitude, ArrayList<String> categories, String menu, int reviewCount, String snippetText) {
 
         this.name = name;
         this.phone = phone;
@@ -41,7 +41,7 @@ public class Coffee {
         this.snippetText = snippetText;
         this.menu = menu;
         this.reviewCount = reviewCount;
-        this.pushID = pushID;
+
 
     }
 
@@ -99,8 +99,8 @@ public class Coffee {
         return reviewCount;
     }
 
-    public String getPushID() {
-        return pushID;
-    }
+//    public String getPushID() {
+//        return pushID;
+//    }
 
 }
