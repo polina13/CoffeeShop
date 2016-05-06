@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.firebase.client.Firebase;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -35,15 +37,23 @@ public class CoffeeShopsActivity extends AppCompatActivity implements View.OnCli
     public void onClick(View view) {
         if (view == mSearchButton) {
             String location = mCoffeePlacesEditText.getText().toString();
-            addToSharedPreferences(location);
+//            if(!(location).equals("")) {
+//                addToSharedPreferences(location);
+//            }
+            saveLocationToFirebase(location);
             Intent intent = new Intent(CoffeeShopsActivity.this, DisplayListActivity.class);
-//            intent.putExtra("location", location);
+            intent.putExtra("location", location);
             startActivity(intent);
         }
     }
 
-    private void addToSharedPreferences(String location) {
-        mEditor.putString(Constants.PREFERENCES_LOCATION_KEY, location).apply();
+//    private void addToSharedPreferences(String location) {
+//        mEditor.putString(Constants.PREFERENCES_LOCATION_KEY, location).apply();
+//    }
+
+    public void saveLocationToFirebase(String location) {
+        Firebase searchedLocationRef = new Firebase(Constants.FIREBASE_URL_SEARCHED_LOCATION);
+        searchedLocationRef.push().setValue(location);
     }
 }
 
