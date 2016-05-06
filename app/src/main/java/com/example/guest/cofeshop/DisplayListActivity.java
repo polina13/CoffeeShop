@@ -23,6 +23,7 @@ import okhttp3.Response;
 
 
 public class DisplayListActivity extends AppCompatActivity {
+
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
@@ -84,6 +85,7 @@ public class DisplayListActivity extends AppCompatActivity {
 
     private void getCoffeeShops(String location) {
         final YelpService yelpService = new YelpService();
+
         yelpService.findCoffeeShops(location, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {

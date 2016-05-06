@@ -10,16 +10,11 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.guest.cofeshop.ui.SavedCoffeeShopsListActivity;
-import com.firebase.client.Firebase;
-import com.firebase.client.ValueEventListener;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class CoffeeShopsActivity extends AppCompatActivity implements View.OnClickListener{
-    private Firebase mSearchedLocationRef;
-    private ValueEventListener mSearchedLocationRefListener;
-    
     @Bind(R.id.searchCoffeeButton) Button mSearchButton;
     @Bind(R.id.savedCoffeeButton) Button mSavedCoffeeButton;
 
@@ -31,8 +26,6 @@ public class CoffeeShopsActivity extends AppCompatActivity implements View.OnCli
 
         mSearchButton.setOnClickListener(this);
         mSavedCoffeeButton.setOnClickListener(this);
-
-        mSearchedLocationRef = new Firebase(Constants.FIREBASE_URL_SEARCHED_LOCATION);
     }
 
     @Override
@@ -47,6 +40,7 @@ public class CoffeeShopsActivity extends AppCompatActivity implements View.OnCli
         return super.onOptionsItemSelected(item);
     }
 
+
     @Override
     public void onClick(View view) {
         if (view == mSearchButton) {
@@ -58,12 +52,6 @@ public class CoffeeShopsActivity extends AppCompatActivity implements View.OnCli
             startActivity(intent);
         }
     }
-
-
-//    public void saveLocationToFirebase(String location) {
-//        Firebase searchedLocationRef = new Firebase(Constants.FIREBASE_URL_SEARCHED_LOCATION);
-//        searchedLocationRef.push().setValue(location);
-//    }
 }
 
 

@@ -23,7 +23,7 @@ public class CoffeeShopViewHolder extends RecyclerView.ViewHolder {
     private static final int MAX_WIDTH = 100;
     private static final int MAX_HEIGHT = 100;
 
-    @Bind(R.id.coffeShopsImageView) ImageView mCoffeShopsImageView;
+    @Bind(R.id.coffeeShopsImageView) ImageView mCoffeShopsImageView;
     @Bind(R.id.coffeeTextView) TextView mCoffeeTextView;
     @Bind(R.id.ratingTextView) TextView mRatingTextView;
     @Bind(R.id.reviewCountTextView) TextView mReviewCountTextView;

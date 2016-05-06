@@ -139,10 +139,10 @@
             android:paddingTop="10sp"
             android:paddingBottom="10sp"
             android:background="#e4460010"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:textColor="#eee48c" />
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textColor="#eee48c" />
         </RelativeLayout>
     </LinearLayout>
 </FrameLayout>

@@ -1,8 +1,6 @@
 package com.example.guest.cofeshop;
 
-/**
- * Created by alexnenchev on 4/29/16.
- */
+
 public class Constants {
     public static final String GOOGLE_MAPS_KEY = BuildConfig.GOOGLE_MAPS_KEY;
     public static final String YELP_CONSUMER_KEY = BuildConfig.YELP_CONSUMER_KEY;
@@ -14,10 +12,10 @@ public class Constants {
     public static final String YELP_LOCATION_QUERY_PARAMETER = "location";
     public static final String PREFERENCES_LOCATION_KEY = "location";
 
-    public static final String FIREBASE_URL = BuildConfig.FIREBASE_ROOT_URL;
     public static final String FIREBASE_LOCATION_SEARCHED_LOCATION = "searchedLocation";
+    public static final String FIREBASE_URL = BuildConfig.FIREBASE_ROOT_URL;
     public static final String FIREBASE_URL_SEARCHED_LOCATION = FIREBASE_URL + "/" + FIREBASE_LOCATION_SEARCHED_LOCATION;
-    public static final String FIREBASE_LOCATION_COFFEESHOPS = "coffeeshops";
+    public static final String FIREBASE_LOCATION_COFFEESHOPS = "coffeeShops";
     public static final String FIREBASE_URL_COFFEESHOPS = FIREBASE_URL + "/" + FIREBASE_LOCATION_COFFEESHOPS;
 
 }
