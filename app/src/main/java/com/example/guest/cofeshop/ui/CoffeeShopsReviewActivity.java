@@ -18,7 +18,7 @@
 //    @Override
 //    protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_coffee_shops_review);
+//        setContentView(R.layout.fragment_coffee_shops_review);
 //        ButterKnife.bind(this);
 //        mReviewButton.setOnClickListener(this);
 //    }

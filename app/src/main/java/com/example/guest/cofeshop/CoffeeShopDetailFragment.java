@@ -31,6 +31,7 @@ public class CoffeeShopDetailFragment extends Fragment implements View.OnClickLi
     @Bind(R.id.addressTextView) TextView mAddressLabel;
     @Bind(R.id.menuTextView) TextView mMenuLabel;
     @Bind(R.id.saveCoffeeShopButton) TextView mSaveCoffeeShopButton;
+    @Bind(R.id.snippetTextView) TextView mSnippetTextView;
 
     private Coffee mCoffeeShop;
 
@@ -59,9 +60,12 @@ public class CoffeeShopDetailFragment extends Fragment implements View.OnClickLi
         mPhoneLabel.setText(mCoffeeShop.getPhone());
         mAddressLabel.setText(android.text.TextUtils.join(", ", mCoffeeShop.getAddress()));
         mMenuLabel.setText("Menu Provider: " + mCoffeeShop.getMenu());
+//        mSnippetTextView.setText(mCoffeeShop.getSnippetText());
 
         mPhoneLabel.setOnClickListener(this);
         mAddressLabel.setOnClickListener(this);
+//        mSnippetTextView.setOnClickListener(this);
+        mWebsiteLabel.setOnClickListener(this);
 
         return view;
     }
@@ -79,6 +83,16 @@ public class CoffeeShopDetailFragment extends Fragment implements View.OnClickLi
                             + "," + mCoffeeShop.getLongitude()
                             + "?q=(" + mCoffeeShop.getName() + ")"));
             startActivity(mapIntent);
+        }
+//        if (v == mSnippetTextView) {
+//            Intent snippetTextIntent = new Intent(Intent.ACTION_VIEW,
+//                    Uri.parse(mCoffeeShop.getSnippetText()));
+//            startActivity(snippetTextIntent);
+//        }
+        if (v == mWebsiteLabel) {
+            Intent webIntent = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse(mCoffeeShop.getWebsite()));
+            startActivity(webIntent);
         }
     }
 }

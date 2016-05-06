@@ -18,6 +18,105 @@
 
         <TextView
             android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:text="Rating:4.5/5"
+            android:id="@+id/ratingTextView"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textStyle="bold"
+            android:layout_gravity="right"
+            android:paddingLeft="10dp"
+            android:paddingRight="15dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="10dp">
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:id="@+id/linearLayout"
+            android:weightSum="1"
+            android:background="#ebdfbd"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Location"
+                android:drawableLeft="@drawable/ic_directions_black_18dp"
+                android:id="@+id/addressTextView"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_vertical"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(503) 555-5252"
+                android:id="@+id/phoneTextView"
+                android:drawableLeft="@drawable/ic_contact_phone_black_18dp"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"/>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View On Web"
+            android:drawableLeft="@drawable/ic_web_black_18dp"
+            android:id="@+id/websiteTextView"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Menu"
+        android:drawableLeft="@drawable/ic_restaurant_black_18dp"
+        android:id="@+id/menuTextView"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:layout_alignTop="@+id/websiteTextView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Review"
+        android:drawableLeft="@drawable/ic_rate_review_black_18dp"
+        android:id="@+id/snippetTextView"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:layout_below="@+id/menuTextView"
+        android:layout_toLeftOf="@+id/menuTextView"
+        android:layout_toStartOf="@+id/menuTextView" />
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Coffee"
             android:id="@+id/coffeeTextView"
@@ -28,71 +127,10 @@
             android:textColor="#bfaa80" />
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="20dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="20dp">
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Rating:4.5/5"
-                android:layout_alignTop="@+id/coffeeTextView"
-                android:id="@+id/ratingTextView"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:textStyle="bold" />
-
-        </RelativeLayout>
-
-    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="20dp"
-        android:paddingTop="20dp"
-        android:paddingRight="20dp"
-        android:layout_gravity="left|top"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/linearLayout"
-        android:weightSum="1"
-        android:background="#ebdfbd"
-        android:layout_alignParentTop="true"
-        android:layout_above="@+id/websiteTextView">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Location"
-            android:drawableLeft="@drawable/ic_directions_black_18dp"
-            android:id="@+id/addressTextView"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="10dp"
-            android:gravity="center_vertical"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="(503) 555-5252"
-            android:id="@+id/phoneTextView"
-            android:drawableLeft="@drawable/ic_call_black_24dp"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="10dp"
-            android:gravity="center"/>
-
-
-    </LinearLayout>
-
-        <Button
+            <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Add To Favorites?"
@@ -100,48 +138,12 @@
             android:textSize="20sp"
             android:paddingTop="10sp"
             android:paddingBottom="10sp"
-            android:background="#3f3803"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginBottom="15dp" />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Reviews"
-            android:id="@+id/reviewButton"
-            android:textSize="20sp"
-            android:background="#9642020a"
-            android:layout_above="@+id/saveCoffeeShopButton"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-
-
-        <TextView
-            android:layout_width="215dp"
-            android:layout_height="wrap_content"
-            android:text="View On Web"
-            android:drawableLeft="@drawable/ic_web_black_24dp"
-            android:id="@+id/websiteTextView"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:padding="10dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-
-        <TextView
-            android:layout_width="215dp"
-            android:layout_height="wrap_content"
-            android:text="Menu"
-            android:id="@+id/menuTextView"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:padding="10dp"
-            android:layout_alignTop="@+id/websiteTextView"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-
-    </RelativeLayout>
+            android:background="#e4460010"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:textColor="#eee48c" />
+        </RelativeLayout>
     </LinearLayout>
 </FrameLayout>
