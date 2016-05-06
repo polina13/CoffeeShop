@@ -52,7 +52,9 @@ public class CoffeeShopViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void bindCoffeeShop(Coffee coffee) {
-        Picasso.with(mContext).load(coffee.getImage()).into(mCoffeShopsImageView);
+
+        Picasso.with(mContext).load(coffee.getImage()).resize(MAX_WIDTH, MAX_HEIGHT)
+                .centerCrop().into(mCoffeShopsImageView);
         mCoffeeTextView.setText(coffee.getName());
         mRatingTextView.setText("Rating: " + coffee.getRating() + "/5");
         mReviewCountTextView.setText("Review Count: " + coffee.getReviewCount());
