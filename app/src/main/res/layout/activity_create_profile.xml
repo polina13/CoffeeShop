@@ -41,6 +41,7 @@
             android:hint="Name"
             android:layout_marginTop="10dp"
             android:textSize="15sp"/>
+
         <EditText
             android:id="@+id/coffeePreferenceEditText"
             android:layout_width="match_parent"
