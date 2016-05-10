@@ -1,4 +1,4 @@
-package com.example.guest.cofeshop.services;
+package com.example.guest.coffeeShop.services;
 
 /**
  * Created by alexnenchev on 5/6/16.

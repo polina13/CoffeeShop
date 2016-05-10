@@ -1,4 +1,4 @@
-package com.example.guest.cofeshop.util;
+package com.example.guest.coffeeShop.util;
 
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;

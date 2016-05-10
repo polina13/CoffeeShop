@@ -10,7 +10,7 @@
 //import android.view.ViewGroup;
 //import android.widget.TextView;
 //
-//import com.example.guest.cofeshop.Coffee;
+//import Coffee;
 //import com.example.guest.cofeshop.R;
 //
 //import org.parceler.Parcels;

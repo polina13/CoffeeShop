@@ -1,4 +1,4 @@
-package com.example.guest.cofeshop.adapters;
+package com.example.guest.coffeeShop.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,9 +7,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.guest.cofeshop.Coffee;
-import com.example.guest.cofeshop.R;
-import com.example.guest.cofeshop.ui.CoffeeShopsDetailActivity;
+import com.example.guest.coffeeShop.Coffee;
+import com.example.guest.coffeeShop.R;
+import com.example.guest.coffeeShop.ui.CoffeeShopsDetailActivity;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;

@@ -1,4 +1,4 @@
-package com.example.guest.cofeshop.models;
+package com.example.guest.coffeeShop.models;
 
 /**
  * Created by alexnenchev on 5/6/16.

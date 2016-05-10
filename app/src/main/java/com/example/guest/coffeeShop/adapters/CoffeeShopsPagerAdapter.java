@@ -1,11 +1,11 @@
-package com.example.guest.cofeshop.adapters;
+package com.example.guest.coffeeShop.adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.example.guest.cofeshop.Coffee;
-import com.example.guest.cofeshop.CoffeeShopDetailFragment;
+import com.example.guest.coffeeShop.Coffee;
+import com.example.guest.coffeeShop.CoffeeShopDetailFragment;
 
 import java.util.ArrayList;
 

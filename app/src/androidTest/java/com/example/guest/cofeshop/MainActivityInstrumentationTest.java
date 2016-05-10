@@ -2,6 +2,8 @@ package com.example.guest.cofeshop;
 
 import android.support.test.rule.ActivityTestRule;
 
+import com.example.guest.coffeeShop.CoffeeShopsActivity;
+
 import org.junit.Rule;
 import org.junit.Test;
 

@@ -1,14 +1,14 @@
-package com.example.guest.cofeshop.ui;
+package com.example.guest.coffeeShop.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.example.guest.cofeshop.Coffee;
-import com.example.guest.cofeshop.Constants;
-import com.example.guest.cofeshop.R;
-import com.example.guest.cofeshop.adapters.FirebaseCoffeeShopListAdapter;
+import com.example.guest.coffeeShop.Coffee;
+import com.example.guest.coffeeShop.Constants;
+import com.example.guest.coffeeShop.R;
+import com.example.guest.coffeeShop.adapters.FirebaseCoffeeShopListAdapter;
 import com.firebase.client.Firebase;
 import com.firebase.client.Query;
 

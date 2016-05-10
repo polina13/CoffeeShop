@@ -1,12 +1,12 @@
-package com.example.guest.cofeshop.ui;
+package com.example.guest.coffeeShop.ui;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
-import com.example.guest.cofeshop.Coffee;
-import com.example.guest.cofeshop.R;
-import com.example.guest.cofeshop.adapters.CoffeeShopsPagerAdapter;
+import com.example.guest.coffeeShop.Coffee;
+import com.example.guest.coffeeShop.R;
+import com.example.guest.coffeeShop.adapters.CoffeeShopsPagerAdapter;
 
 import org.parceler.Parcels;
 

@@ -1,4 +1,4 @@
-package com.example.guest.cofeshop.ui;
+package com.example.guest.coffeeShop.ui;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,13 +12,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.guest.cofeshop.Constants;
-import com.example.guest.cofeshop.MainActivity;
-import com.example.guest.cofeshop.R;
+import com.example.guest.coffeeShop.Constants;
+import com.example.guest.coffeeShop.MainActivity;
+import com.example.guest.coffeeShop.R;
+import com.example.guest.coffeeShop.models.Profile;
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
-import com.example.guest.cofeshop.models.Profile;
 
 import java.util.Map;
 

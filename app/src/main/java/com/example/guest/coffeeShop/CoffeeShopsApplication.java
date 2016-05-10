@@ -1,4 +1,4 @@
-package com.example.guest.cofeshop;
+package com.example.guest.coffeeShop;
 
 import android.app.Application;
 

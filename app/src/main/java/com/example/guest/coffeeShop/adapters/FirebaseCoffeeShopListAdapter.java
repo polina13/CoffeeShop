@@ -1,4 +1,4 @@
-package com.example.guest.cofeshop.adapters;
+package com.example.guest.coffeeShop.adapters;
 
 /**
  * Created by alexnenchev on 5/6/16.
@@ -8,9 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.guest.cofeshop.Coffee;
-import com.example.guest.cofeshop.R;
-import com.example.guest.cofeshop.util.FirebaseRecyclerAdapter;
+import com.example.guest.coffeeShop.Coffee;
+import com.example.guest.coffeeShop.R;
+import com.example.guest.coffeeShop.util.FirebaseRecyclerAdapter;
 import com.firebase.client.Query;
 
 public class FirebaseCoffeeShopListAdapter extends FirebaseRecyclerAdapter<CoffeeShopViewHolder,Coffee> {

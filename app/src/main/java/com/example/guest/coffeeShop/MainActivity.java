@@ -1,4 +1,4 @@
-package com.example.guest.cofeshop;
+package com.example.guest.coffeeShop;
 
 
 import android.content.Intent;
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 //import android.widget.Toast;
 //
-//import com.example.guest.cofeshop.services.GeolocationService;
+//import GeolocationService;
 //
 //import java.io.IOException;
 //
