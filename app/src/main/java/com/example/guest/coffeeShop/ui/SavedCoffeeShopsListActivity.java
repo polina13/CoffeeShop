@@ -44,7 +44,7 @@ public class SavedCoffeeShopsListActivity extends AppCompatActivity implements O
     private void setUpFirebaseQuery() {
         String userUid = mSharedPreferences.getString(Constants.KEY_UID, null);
         String location = mFirebaseCoffeeShopsRef.child(userUid).toString();
-        mQuery = new Firebase(location);
+        mQuery = new Firebase(location).orderByChild("index");
     }
 
     private void setUpRecyclerView() {
@@ -59,6 +59,16 @@ public class SavedCoffeeShopsListActivity extends AppCompatActivity implements O
     @Override
     public void onStartDrag(RecyclerView.ViewHolder viewHolder) {
         mItemTouchHelper.startDrag(viewHolder);
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        String uid = mSharedPreferences.getString(Constants.KEY_UID, null);
+        for (Coffee coffee : mAdapter.getItems()) {
+            String pushID = coffee.getPushId();
+            coffee.setIndex(Integer.toString(mAdapter.getItems().indexOf(coffee)));
+            mFirebaseCoffeeShopsRef.child(uid).child(pushID).setValue(coffee);
+        }
     }
 }
 

@@ -21,6 +21,7 @@ public class Coffee {
     int reviewCount;
     String snippetText;
     String pushId;
+    private String index;
 
     public Coffee() {}
 
@@ -38,6 +39,7 @@ public class Coffee {
         this.snippetText = snippetText;
         this.menu = menu;
         this.reviewCount = reviewCount;
+        this.index = "not_specified";
     }
 
     String getLargeImage(String image) {
@@ -96,5 +98,13 @@ public class Coffee {
 
     public void setPushId(String pushId) {
         this.pushId = pushId;
+    }
+
+    public String getIndex() {
+        return index;
+    }
+
+    public void setIndex(String index) {
+        this.index = index;
     }
 }
