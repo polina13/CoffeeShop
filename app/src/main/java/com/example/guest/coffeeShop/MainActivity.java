@@ -11,16 +11,17 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
-
+//    private Firebase mFirebaseRef;
     public static final String TAG = MainActivity.class.getSimpleName();
    @Bind(R.id.findShopsButton) Button mFindShopsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-       super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       ButterKnife.bind(this);
+//        mFirebaseRef = new Firebase(Constants.FIREBASE_URL);
+        ButterKnife.bind(this);
+
 
         mFindShopsButton.setOnClickListener(this);
 

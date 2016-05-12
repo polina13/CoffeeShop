@@ -1,5 +1,6 @@
 package com.example.guest.coffeeShop;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -11,6 +12,9 @@ import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+
+import com.example.guest.coffeeShop.ui.LoginProfileActivity;
+import com.firebase.client.Firebase;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -31,6 +35,7 @@ public class DisplayListActivity extends AppCompatActivity {
     public static final String TAG = DisplayListActivity.class.getSimpleName();
     private CoffeeShopsListAdapter mAdapter;
     public ArrayList<Coffee> mCoffeeShops = new ArrayList<>();
+    private Firebase mFirebaseRef;
 
 
     @Override
@@ -38,7 +43,7 @@ public class DisplayListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display);
         ButterKnife.bind(this);
-
+        mFirebaseRef = new Firebase(Constants.FIREBASE_URL);
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mRecentAddress = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
         if (mRecentAddress != null) {
@@ -50,6 +55,8 @@ public class DisplayListActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_search, menu);
+        inflater.inflate(R.menu.menu_main, menu);
+
         ButterKnife.bind(this);
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -76,8 +83,26 @@ public class DisplayListActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_logout) {
+            logout();
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
+
+    private void logout() {
+        mFirebaseRef.unauth();
+        takeUserToLoginScreenOnUnAuth();
+    }
+//        return super.onOptionsItemSelected(item);
+private void takeUserToLoginScreenOnUnAuth() {
+    Intent intent = new Intent(DisplayListActivity.this, LoginProfileActivity.class);
+    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+    startActivity(intent);
+    finish();
+}
+
 
     private void addToSharedPreferences(String location) {
         mEditor.putString(Constants.PREFERENCES_LOCATION_KEY, location).apply();
