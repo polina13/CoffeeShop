@@ -1,6 +1,8 @@
 package com.example.guest.coffeeShop.ui;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -15,11 +17,11 @@ import com.firebase.client.Query;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class SavedCoffeeShopsListActivity extends AppCompatActivity {
+public class SavedCoffeeShopsListActivity extends AppCompatActivity{
     private Query mQuery;
     private Firebase mFirebaseCoffeeShopsRef;
     private FirebaseCoffeeShopListAdapter mAdapter;
-
+    private SharedPreferences mSharedPreferences;
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
 
     @Override
@@ -28,6 +30,7 @@ public class SavedCoffeeShopsListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_display);
         ButterKnife.bind(this);
 
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mFirebaseCoffeeShopsRef = new Firebase(Constants.FIREBASE_URL_COFFEESHOPS);
 
         setUpFirebaseQuery();
@@ -35,12 +38,13 @@ public class SavedCoffeeShopsListActivity extends AppCompatActivity {
     }
 
     private void setUpFirebaseQuery() {
-        String location = mFirebaseCoffeeShopsRef.toString();
+        String userUid = mSharedPreferences.getString(Constants.KEY_UID, null);
+        String location = mFirebaseCoffeeShopsRef.child(userUid).toString();
         mQuery = new Firebase(location);
     }
 
     private void setUpRecyclerView() {
-        mAdapter = new FirebaseCoffeeShopListAdapter(mQuery, Coffee.class);
+        mAdapter = new FirebaseCoffeeShopListAdapter(mQuery,Coffee.class);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mAdapter);
     }

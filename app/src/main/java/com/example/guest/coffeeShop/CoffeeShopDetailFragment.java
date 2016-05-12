@@ -2,8 +2,10 @@ package com.example.guest.coffeeShop;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,7 +39,7 @@ public class CoffeeShopDetailFragment extends Fragment implements View.OnClickLi
     @Bind(R.id.menuTextView) TextView mMenuLabel;
     @Bind(R.id.saveCoffeeShopButton) TextView mSaveCoffeeShopButton;
     @Bind(R.id.snippetTextView) TextView mSnippetTextView;
-
+    private SharedPreferences mSharedPreferences;
     private Coffee mCoffeeShop;
 
     public static CoffeeShopDetailFragment newInstance(Coffee coffeeShop) {
@@ -52,6 +54,7 @@ public class CoffeeShopDetailFragment extends Fragment implements View.OnClickLi
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mCoffeeShop = Parcels.unwrap(getArguments().getParcelable("coffeeShop"));
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
     }
 
     @Override
@@ -102,8 +105,12 @@ public class CoffeeShopDetailFragment extends Fragment implements View.OnClickLi
         }
 
         if (v == mSaveCoffeeShopButton) {
-            Firebase ref = new Firebase(Constants.FIREBASE_URL_COFFEESHOPS);
-            ref.push().setValue(mCoffeeShop);
+            String userUid = mSharedPreferences.getString(Constants.KEY_UID, null);
+            Firebase userCoffeeShopsFirebaseRef = new Firebase(Constants.FIREBASE_URL_COFFEESHOPS).child(userUid);
+            Firebase pushRef = userCoffeeShopsFirebaseRef.push();
+            String coffeeShopPushId = pushRef.getKey();
+            mCoffeeShop.setPushId(coffeeShopPushId);
+            pushRef.setValue(mCoffeeShop);
             Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
         }
     }

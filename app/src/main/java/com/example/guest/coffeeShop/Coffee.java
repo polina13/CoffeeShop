@@ -20,7 +20,7 @@ public class Coffee {
     String menu;
     int reviewCount;
     String snippetText;
-    String pushID;
+    String pushId;
 
     public Coffee() {}
 
@@ -38,7 +38,6 @@ public class Coffee {
         this.snippetText = snippetText;
         this.menu = menu;
         this.reviewCount = reviewCount;
-
     }
 
     String getLargeImage(String image) {
@@ -67,7 +66,6 @@ public class Coffee {
         return rating;
     }
 
-
     public List<String> getAddress() {
         return address;
     }
@@ -92,4 +90,11 @@ public class Coffee {
         return reviewCount;
     }
 
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
+    }
 }
