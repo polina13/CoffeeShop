@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.example.guest.coffeeShop.Coffee;
 import com.example.guest.coffeeShop.R;
 import com.example.guest.coffeeShop.adapters.CoffeeShopsPagerAdapter;
+import com.example.guest.coffeeShop.util.ScaleAndFadePageTransformer;
 
 import org.parceler.Parcels;
 
@@ -31,7 +32,9 @@ public class CoffeeShopsDetailActivity extends AppCompatActivity {
         adapterViewPager = new CoffeeShopsPagerAdapter(getSupportFragmentManager(), mCoffeeShops);
         mCoffeeViewPager.setAdapter(adapterViewPager);
         mCoffeeViewPager.setCurrentItem(startingPosition);
-
+        mCoffeeViewPager.setAdapter(adapterViewPager);
+        mCoffeeViewPager.setCurrentItem(startingPosition);
+        mCoffeeViewPager.setPageTransformer(true, new ScaleAndFadePageTransformer());
     }
 }
 

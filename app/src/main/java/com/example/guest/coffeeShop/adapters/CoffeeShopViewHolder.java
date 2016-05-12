@@ -59,11 +59,11 @@ public class CoffeeShopViewHolder extends RecyclerView.ViewHolder implements Ite
 
     @Override
     public void onItemSelected() {
-
+        itemView.animate().alpha(0.6f).scaleX(0.7f).scaleY(0.7f).setDuration(400);
     }
 
     @Override
     public void onItemClear() {
-
+        itemView.animate().alpha(1f).scaleX(1f).scaleY(1f);
     }
 }
