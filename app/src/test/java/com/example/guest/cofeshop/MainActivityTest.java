@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.os.Build;
 import android.widget.TextView;
 
+import com.example.guest.coffeeShop.BuildConfig;
 import com.example.guest.coffeeShop.CoffeeShopsActivity;
 import com.example.guest.coffeeShop.MainActivity;
+import com.example.guest.coffeeShop.R;
 
 import org.junit.Before;
 import org.junit.Test;

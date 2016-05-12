@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.example.guest.coffeeShop.Coffee;
 import com.example.guest.coffeeShop.R;
 import com.example.guest.coffeeShop.ui.CoffeeShopsDetailActivity;
+import com.example.guest.coffeeShop.util.ItemTouchHelperViewHolder;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
@@ -19,7 +20,7 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class CoffeeShopViewHolder extends RecyclerView.ViewHolder {
+public class CoffeeShopViewHolder extends RecyclerView.ViewHolder implements ItemTouchHelperViewHolder {
     private static final int MAX_WIDTH = 100;
     private static final int MAX_HEIGHT = 100;
 
@@ -50,10 +51,19 @@ public class CoffeeShopViewHolder extends RecyclerView.ViewHolder {
 
     public void bindCoffeeShop(Coffee coffee) {
 
-        Picasso.with(mContext).load(coffee.getImage()).resize(MAX_WIDTH, MAX_HEIGHT)
-                .centerCrop().into(mCoffeShopsImageView);
+        Picasso.with(mContext).load(coffee.getImage()).resize(MAX_WIDTH, MAX_HEIGHT).centerCrop().into(mCoffeShopsImageView);
         mCoffeeTextView.setText(coffee.getName());
         mRatingTextView.setText("Rating: " + coffee.getRating() + "/5");
         mReviewCountTextView.setText("Review Count: " + coffee.getReviewCount());
+    }
+
+    @Override
+    public void onItemSelected() {
+
+    }
+
+    @Override
+    public void onItemClear() {
+
     }
 }
