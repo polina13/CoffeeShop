@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
-import com.example.guest.coffeeShop.Coffee;
+import com.example.guest.coffeeShop.models.Coffee;
 import com.example.guest.coffeeShop.R;
 import com.example.guest.coffeeShop.adapters.CoffeeShopsPagerAdapter;
 import com.example.guest.coffeeShop.util.ScaleAndFadePageTransformer;

@@ -13,7 +13,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.guest.coffeeShop.Constants;
-import com.example.guest.coffeeShop.MainActivity;
 import com.example.guest.coffeeShop.R;
 import com.example.guest.coffeeShop.models.Profile;
 import com.firebase.client.AuthData;

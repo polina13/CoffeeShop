@@ -1,4 +1,4 @@
-package com.example.guest.coffeeShop;
+package com.example.guest.coffeeShop.ui;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,7 +13,11 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import com.example.guest.coffeeShop.ui.LoginProfileActivity;
+import com.example.guest.coffeeShop.adapters.CoffeeShopsListAdapter;
+import com.example.guest.coffeeShop.Constants;
+import com.example.guest.coffeeShop.R;
+import com.example.guest.coffeeShop.models.Coffee;
+import com.example.guest.coffeeShop.services.YelpService;
 import com.firebase.client.Firebase;
 
 import java.io.IOException;

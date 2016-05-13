@@ -4,8 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.example.guest.coffeeShop.Coffee;
-import com.example.guest.coffeeShop.CoffeeShopDetailFragment;
+import com.example.guest.coffeeShop.models.Coffee;
+import com.example.guest.coffeeShop.ui.CoffeeShopDetailFragment;
 
 import java.util.ArrayList;
 

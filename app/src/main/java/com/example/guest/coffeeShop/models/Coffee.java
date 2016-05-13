@@ -1,4 +1,4 @@
-package com.example.guest.coffeeShop;
+package com.example.guest.coffeeShop.models;
 
 import org.parceler.Parcel;
 

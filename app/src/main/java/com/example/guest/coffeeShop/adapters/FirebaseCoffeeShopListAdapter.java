@@ -13,7 +13,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.guest.coffeeShop.Coffee;
+import com.example.guest.coffeeShop.models.Coffee;
 import com.example.guest.coffeeShop.Constants;
 import com.example.guest.coffeeShop.R;
 import com.example.guest.coffeeShop.util.FirebaseRecyclerAdapter;

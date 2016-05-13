@@ -1,4 +1,4 @@
-package com.example.guest.coffeeShop;
+package com.example.guest.coffeeShop.ui;
 
 
 import android.content.Intent;
@@ -14,6 +14,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.guest.coffeeShop.Constants;
+import com.example.guest.coffeeShop.R;
+import com.example.guest.coffeeShop.models.Coffee;
 import com.firebase.client.Firebase;
 import com.squareup.picasso.Picasso;
 

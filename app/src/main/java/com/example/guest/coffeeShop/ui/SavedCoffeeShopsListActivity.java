@@ -8,7 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 
-import com.example.guest.coffeeShop.Coffee;
+import com.example.guest.coffeeShop.models.Coffee;
 import com.example.guest.coffeeShop.Constants;
 import com.example.guest.coffeeShop.R;
 import com.example.guest.coffeeShop.adapters.FirebaseCoffeeShopListAdapter;

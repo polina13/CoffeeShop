@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.guest.coffeeShop.Coffee;
+import com.example.guest.coffeeShop.models.Coffee;
 import com.example.guest.coffeeShop.R;
 import com.example.guest.coffeeShop.ui.CoffeeShopsDetailActivity;
 import com.example.guest.coffeeShop.util.ItemTouchHelperViewHolder;

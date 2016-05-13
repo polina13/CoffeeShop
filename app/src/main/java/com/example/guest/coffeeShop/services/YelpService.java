@@ -1,6 +1,9 @@
-package com.example.guest.coffeeShop;
+package com.example.guest.coffeeShop.services;
 
 import android.util.Log;
+
+import com.example.guest.coffeeShop.models.Coffee;
+import com.example.guest.coffeeShop.Constants;
 
 import org.json.JSONArray;
 import org.json.JSONException;
