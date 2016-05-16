@@ -10,15 +10,10 @@ android:layout_height="match_parent" >
 
 <fragment
     android:id="@+id/fragmentItemsList"
-    android:name="com.example.guest.coffeeShop.ui.DisplayListActivity"
     android:layout_height="match_parent"
     android:layout_width="0dp"
     android:layout_weight="3"
     tools:layout="@layout/coffee_list_display" />
-
-<View android:background="@color/colorAccent"
-    android:layout_width="2dp"
-    android:layout_height="wrap_content"/>
 
 <FrameLayout
     android:id="@+id/coffeeDetailContainer"
@@ -27,5 +22,4 @@ android:layout_height="match_parent" >
     android:layout_weight="6">
 
 </FrameLayout>
-
 </LinearLayout>

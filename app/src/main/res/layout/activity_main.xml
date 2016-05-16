@@ -73,7 +73,8 @@
             android:src="@drawable/cofferoom"
             android:layout_marginTop="365dp"
             android:scaleType="fitXY"
-            android:adjustViewBounds="true"/>
+            android:adjustViewBounds="true"
+            android:layout_gravity="bottom" />
     </LinearLayout>
 
     <Button
