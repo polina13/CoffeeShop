@@ -19,7 +19,7 @@ public class CoffeeShopsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return CoffeeShopDetailFragment.newInstance(mCoffeeShops.get(position));
+        return CoffeeShopDetailFragment.newInstance(mCoffeeShops,position);
     }
 
     @Override
