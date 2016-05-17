@@ -22,8 +22,6 @@ import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
 
-import java.util.ArrayList;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -46,13 +44,11 @@ public class CoffeeShopDetailFragment extends Fragment implements View.OnClickLi
     @Bind(R.id.snippetTextView) TextView mSnippetTextView;
     private SharedPreferences mSharedPreferences;
     private Coffee mCoffeeShop;
-    private Integer mPosition;
-    private ArrayList<Coffee> mCoffeeShops;
 
-    public static CoffeeShopDetailFragment newInstance(ArrayList<Coffee> coffeeShops, Integer position) {
+    public static CoffeeShopDetailFragment newInstance(Coffee coffeeShop) {
         CoffeeShopDetailFragment coffeeShopDetailFragment = new CoffeeShopDetailFragment();
         Bundle args = new Bundle();
-        args.putParcelable("coffeeShop", Parcels.wrap(coffeeShops));
+        args.putParcelable("coffeeShop", Parcels.wrap(coffeeShop));
         coffeeShopDetailFragment.setArguments(args);
         return coffeeShopDetailFragment;
     }
@@ -60,11 +56,8 @@ public class CoffeeShopDetailFragment extends Fragment implements View.OnClickLi
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mCoffeeShop = Parcels.unwrap(getArguments().getParcelable(Constants.EXTRA_KEY_COFFEESHOPS));
+        mCoffeeShop = Parcels.unwrap(getArguments().getParcelable("coffeeShop"));
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        mPosition = getArguments().getInt(Constants.EXTRA_KEY_POSITION);
-        mCoffeeShop = mCoffeeShops.get(mPosition);
     }
 
     @Override
@@ -80,6 +73,7 @@ public class CoffeeShopDetailFragment extends Fragment implements View.OnClickLi
         mAddressLabel.setText(android.text.TextUtils.join(", ", mCoffeeShop.getAddress()));
         mMenuLabel.setText("Menu Provider: " + mCoffeeShop.getMenu());
 //        mSnippetTextView.setText(mCoffeeShop.getSnippetText());
+
         mPhoneLabel.setOnClickListener(this);
         mAddressLabel.setOnClickListener(this);
 //        mSnippetTextView.setOnClickListener(this);
@@ -120,7 +114,7 @@ public class CoffeeShopDetailFragment extends Fragment implements View.OnClickLi
             String coffeeShopPushId = pushRef.getKey();
             mCoffeeShop.setPushId(coffeeShopPushId);
             pushRef.setValue(mCoffeeShop);
-            Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "This Coffee Shop is now in your favorites!", Toast.LENGTH_SHORT).show();
         }
     }
 }
