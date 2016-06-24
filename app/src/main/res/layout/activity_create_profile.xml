@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.guest.coffeeShop.ui.CreateProfileActivity">
+    tools:context="com.epicodus.guest.coffeeShop.ui.CreateProfileActivity">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -90,7 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:textStyle="bold"
-            android:textSize="15sp"
+            android:textSize="18sp"
             android:text="Already have an account? Log in here!"
             android:id="@+id/loginTextView"
             android:layout_gravity="center_horizontal" />

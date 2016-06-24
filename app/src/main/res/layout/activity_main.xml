@@ -4,19 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.guest.coffeeShop.MainActivity"
-    android:background="#bfaa80">
+    android:background="@color/colorMainPage">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/mainPageImageView"
         android:src="@drawable/coffee"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:cropToPadding="false"
-        android:paddingBottom="89dp"/>
+        android:layout_above="@+id/findShopsButton"
+        android:layout_marginBottom="70dp"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -25,56 +22,42 @@
         android:id="@+id/titleTextView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textColor="#143b03"
         android:textSize="45sp"
         android:textStyle="bold"
-        android:typeface="normal"
-        android:gravity="start|center_horizontal"
-        android:layout_marginTop="35dp"/>
+        android:layout_marginTop="20dp"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Find Local Shops"
         android:id="@+id/findShopsButton"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:textColor="#eadadee5"
-        android:textSize="18sp"
-        android:paddingTop="18dp"
-        android:paddingBottom="18dp"
-        android:background="#3f3803"/>
+        android:textSize="20sp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:background="@color/colorOrange"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="1"
         android:layout_alignTop="@+id/titleTextView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:id="@+id/linearLayout2">
 
         <ImageView
-            android:layout_width="197dp"
-            android:layout_height="match_parent"
-            android:id="@+id/relaxView"
-            android:src="@drawable/relax"
-            android:layout_marginTop="365dp"
-            android:scaleType="fitXY"
-            android:adjustViewBounds="true"/>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="518dp"
+            android:layout_height="180dp"
             android:id="@+id/imageView2"
             android:src="@drawable/cofferoom"
-            android:layout_marginTop="365dp"
+            android:layout_marginTop="350dp"
             android:scaleType="fitXY"
-            android:adjustViewBounds="true"
-            android:layout_gravity="bottom" />
+            android:layout_marginBottom="20dp"/>
     </LinearLayout>
 
 </RelativeLayout>

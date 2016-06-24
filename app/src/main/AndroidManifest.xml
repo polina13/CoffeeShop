@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.guest.coffeeShop">
+    package="com.epicodus.guest.coffeeShop">
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".CoffeeShopsApplication"
+        android:name="com.epicodus.guest.coffeeShop.CoffeeShopsApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.CoffeeShopsActivity"/>
-        <activity android:name=".ui.DisplayListActivity">
+        <activity android:name="com.epicodus.guest.coffeeShop.ui.CoffeeShopsActivity"/>
+        <activity android:name="com.epicodus.guest.coffeeShop.ui.DisplayListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.CoffeeShopsActivity" />
+                android:value="com.epicodus.guest.coffeeShop.ui.CoffeeShopsActivity" />
         </activity>
-        <activity android:name=".ui.CoffeeShopsDetailActivity" />
-        <activity android:name=".ui.SavedCoffeeShopsListActivity" />
-        <activity android:name=".ui.LoginProfileActivity">
+        <activity android:name="com.epicodus.guest.coffeeShop.ui.CoffeeShopsDetailActivity" />
+        <activity android:name="com.epicodus.guest.coffeeShop.ui.SavedCoffeeShopsListActivity" />
+        <activity android:name="com.epicodus.guest.coffeeShop.ui.LoginProfileActivity">
             <intent-filter android:name="android.intent.action.MAIN">
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.CreateProfileActivity" />
-        <activity android:name=".ui.MainActivity"/>
+        <activity android:name="com.epicodus.guest.coffeeShop.ui.CreateProfileActivity" />
+        <activity android:name="com.epicodus.guest.coffeeShop.ui.MainActivity"/>
     </application>
 </manifest>

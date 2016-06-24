@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.guest.coffeeShop.ui.LoginProfileActivity">
+    tools:context="com.epicodus.guest.coffeeShop.ui.LoginProfileActivity">
 
     <TextView
     android:layout_width="match_parent"
@@ -52,6 +52,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Log in"
+            android:textSize="25sp"
             android:background="@color/colorAccent"
             android:layout_marginTop="15dp" />
 
@@ -59,10 +60,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:textStyle="bold"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:text="Don't have an account? Sign up here!"
             android:id="@+id/registerTextView"
-            android:background="#e01111" />
+            android:background="@color/colorBackground" />
     </LinearLayout>
 </RelativeLayout>
