@@ -34,6 +34,3 @@ public class BaseFragment extends Fragment {
     }
 }
 
-//fix up the design and margins
-//create splash activity
-//add softkeyboard hiding

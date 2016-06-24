@@ -26,9 +26,6 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class CoffeeShopDetailFragment extends Fragment implements View.OnClickListener {
     private static final int MAX_WIDTH = 400;
     private static final int MAX_HEIGHT = 300;
@@ -72,11 +69,9 @@ public class CoffeeShopDetailFragment extends Fragment implements View.OnClickLi
         mPhoneLabel.setText(mCoffeeShop.getPhone());
         mAddressLabel.setText(android.text.TextUtils.join(", ", mCoffeeShop.getAddress()));
         mMenuLabel.setText("Menu Provider: " + mCoffeeShop.getMenu());
-//        mSnippetTextView.setText(mCoffeeShop.getSnippetText());
 
         mPhoneLabel.setOnClickListener(this);
         mAddressLabel.setOnClickListener(this);
-//        mSnippetTextView.setOnClickListener(this);
         mWebsiteLabel.setOnClickListener(this);
 
         return view;
@@ -96,11 +91,7 @@ public class CoffeeShopDetailFragment extends Fragment implements View.OnClickLi
                             + "?q=(" + mCoffeeShop.getName() + ")"));
             startActivity(addressIntent);
         }
-//        if (v == mSnippetTextView) {
-//            Intent snippetTextIntent = new Intent(Intent.ACTION_VIEW,
-//                    Uri.parse(mCoffeeShop.getSnippetText()));
-//            startActivity(snippetTextIntent);
-//        }
+
         if (v == mWebsiteLabel) {
             Intent webIntent = new Intent(Intent.ACTION_VIEW,
                     Uri.parse(mCoffeeShop.getWebsite()));

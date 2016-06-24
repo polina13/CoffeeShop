@@ -25,7 +25,6 @@ public class CoffeeShopsActivity extends AppCompatActivity implements View.OnCli
         mSavedCoffeeButton.setOnClickListener(this);
     }
 
-
     @Override
     public void onClick(View view) {
         if (view == mSearchButton) {
