@@ -1,5 +1,6 @@
 package com.epicodus.guest.coffeeShop.ui;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ import java.util.Map;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class CreateProfileActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = CreateProfileActivity.class.getSimpleName();
@@ -48,6 +50,12 @@ public class CreateProfileActivity extends AppCompatActivity implements View.OnC
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mSharedPreferencesEditor = mSharedPreferences.edit();
     }
+
+    @Override
+    protected void attachBaseContext(Context context) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(context));
+    }
+
 
     @Override
     public void onClick(View view) {

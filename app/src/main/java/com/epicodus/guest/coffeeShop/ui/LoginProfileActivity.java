@@ -1,6 +1,7 @@
 package com.epicodus.guest.coffeeShop.ui;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import com.firebase.client.FirebaseError;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class LoginProfileActivity extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.registerTextView) TextView mRegisterTextView;
@@ -52,6 +54,12 @@ public class LoginProfileActivity extends AppCompatActivity implements View.OnCl
         mAuthProgressDialog.setMessage("Authenticating with Firebase...");
         mAuthProgressDialog.setCancelable(false);
     }
+
+    @Override
+    protected void attachBaseContext(Context context) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(context));
+    }
+
 
     @Override
     public void onClick(View view) {

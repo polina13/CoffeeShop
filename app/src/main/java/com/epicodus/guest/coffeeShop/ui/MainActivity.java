@@ -1,6 +1,7 @@
 package com.epicodus.guest.coffeeShop.ui;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import com.epicodus.guest.coffeeShop.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = MainActivity.class.getSimpleName();
@@ -24,6 +26,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mFindShopsButton.setOnClickListener(this);
     }
+
+    @Override
+    protected void attachBaseContext(Context context) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(context));
+    }
+
     @Override
     public void onClick(View view) {
        Intent intent = new Intent(MainActivity.this, CoffeeShopsActivity.class);
