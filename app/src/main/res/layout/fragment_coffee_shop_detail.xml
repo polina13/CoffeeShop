@@ -101,19 +101,6 @@
         android:layout_alignParentEnd="true" />
 
         <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Review"
-        android:drawableLeft="@drawable/ic_rate_review_black_18dp"
-        android:id="@+id/snippetTextView"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:padding="10dp"
-        android:layout_below="@+id/menuTextView"
-        android:layout_toLeftOf="@+id/menuTextView"
-        android:layout_toStartOf="@+id/menuTextView" />
-
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="View On Web"

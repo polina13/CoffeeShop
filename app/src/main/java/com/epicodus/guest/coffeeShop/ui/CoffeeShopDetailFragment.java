@@ -38,7 +38,6 @@ public class CoffeeShopDetailFragment extends Fragment implements View.OnClickLi
     @Bind(R.id.addressTextView) TextView mAddressLabel;
     @Bind(R.id.menuTextView) TextView mMenuLabel;
     @Bind(R.id.saveCoffeeShopButton) TextView mSaveCoffeeShopButton;
-    @Bind(R.id.snippetTextView) TextView mSnippetTextView;
     private SharedPreferences mSharedPreferences;
     private Coffee mCoffeeShop;
 

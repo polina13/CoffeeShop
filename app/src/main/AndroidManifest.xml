@@ -11,23 +11,29 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.CoffeeShopsActivity" />
+        <activity android:name=".ui.CoffeeShopsActivity"
+            android:screenOrientation="portrait" />
         <activity android:name=".ui.DisplayListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.epicodus.guest.coffeeShop.ui.CoffeeShopsActivity" />
         </activity>
-        <activity android:name=".ui.CoffeeShopsDetailActivity" />
-        <activity android:name=".ui.SavedCoffeeShopsListActivity" />
-        <activity android:name=".ui.LoginProfileActivity">
+        <activity android:name=".ui.CoffeeShopsDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.SavedCoffeeShopsListActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.LoginProfileActivity"
+                  android:screenOrientation="portrait">
             <intent-filter android:name="android.intent.action.MAIN">
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.CreateProfileActivity" />
-        <activity android:name=".ui.MainActivity" />
+        <activity android:name=".ui.CreateProfileActivity"
+        android:screenOrientation="portrait"/>
+        <activity android:name=".ui.MainActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
