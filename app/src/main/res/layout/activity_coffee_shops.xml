@@ -15,7 +15,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
 
-
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,13 +26,13 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#e0981c" />
+        android:background="@color/colorPrimaryDark" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="My Favorite Coffee Shops"
         android:id="@+id/savedCoffeeButton"
-        android:background="@color/colorAccent"
+        android:background="@color/colorOrange"
         android:visibility="visible"
         android:layout_above="@+id/searchCoffeeButton"
         android:layout_alignParentLeft="true"

@@ -15,6 +15,7 @@ public class CoffeeShopsActivity extends AppCompatActivity implements View.OnCli
     @Bind(R.id.searchCoffeeButton) Button mSearchButton;
     @Bind(R.id.savedCoffeeButton) Button mSavedCoffeeButton;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
