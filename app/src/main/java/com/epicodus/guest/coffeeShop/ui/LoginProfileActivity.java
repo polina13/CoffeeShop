@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -34,6 +35,11 @@ public class LoginProfileActivity extends AppCompatActivity implements View.OnCl
     private SharedPreferences.Editor mSharedPreferencesEditor;
     private ProgressDialog mAuthProgressDialog;
 
+    private void setHideSoftKeyboard(EditText editText){
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(editText.getWindowToken(), 0);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +59,7 @@ public class LoginProfileActivity extends AppCompatActivity implements View.OnCl
         mAuthProgressDialog.setTitle("Loading...");
         mAuthProgressDialog.setMessage("Authenticating with Firebase...");
         mAuthProgressDialog.setCancelable(false);
+
     }
 
     @Override
@@ -65,6 +72,7 @@ public class LoginProfileActivity extends AppCompatActivity implements View.OnCl
     public void onClick(View view) {
         if (view == mPasswordLoginButton) {
             loginWithPassword();
+            setHideSoftKeyboard(mPasswordEditText);
         }
         if (view == mRegisterTextView) {
         Intent intent = new Intent(LoginProfileActivity.this, CreateProfileActivity.class);
