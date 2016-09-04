@@ -37,3 +37,9 @@
     </application>
 
 </manifest>
+
+
+<!--things to add
+1. Design- implement Google Material Desing to project
+2. Add orientation and layout in the manifest file
+3. Add error handlers into code-->
