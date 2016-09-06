@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:padding="10dp"
-            android:hint="Confirm password"
+            android:hint="Confirm Password"
             android:textSize="15sp"/>
 
         <Button

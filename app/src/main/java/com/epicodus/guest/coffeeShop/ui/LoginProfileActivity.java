@@ -1,5 +1,6 @@
 package com.epicodus.guest.coffeeShop.ui;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -35,10 +36,17 @@ public class LoginProfileActivity extends AppCompatActivity implements View.OnCl
     private SharedPreferences.Editor mSharedPreferencesEditor;
     private ProgressDialog mAuthProgressDialog;
 
-    private void setHideSoftKeyboard(EditText editText){
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(editText.getWindowToken(), 0);
+//    private void setHideSoftKeyboard(EditText editText){
+//        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+//        imm.hideSoftInputFromWindow(editText.getWindowToken(), 0);
+//    }
+
+    public void hideKeyboard(Activity activity) {
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
     }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +80,7 @@ public class LoginProfileActivity extends AppCompatActivity implements View.OnCl
     public void onClick(View view) {
         if (view == mPasswordLoginButton) {
             loginWithPassword();
-            setHideSoftKeyboard(mPasswordEditText);
+            hideKeyboard(LoginProfileActivity.this);
         }
         if (view == mRegisterTextView) {
         Intent intent = new Intent(LoginProfileActivity.this, CreateProfileActivity.class);

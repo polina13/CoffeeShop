@@ -42,4 +42,7 @@
 <!--things to add
 1. Design- implement Google Material Desing to project
 2. Add orientation and layout in the manifest file
-3. Add error handlers into code-->
+3. Add error handlers into code
+4. Add calligraphy library for fonts
+5. Update create and login pages too simpl, possible put background
+6. hide softkeyboard-->

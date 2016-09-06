@@ -1,5 +1,6 @@
 package com.epicodus.guest.coffeeShop.ui;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -40,10 +41,12 @@ public class CreateProfileActivity extends AppCompatActivity implements View.OnC
     private SharedPreferences.Editor mSharedPreferencesEditor;
     private SharedPreferences mSharedPreferences;
 
-    private void setHideSoftKeyboard(EditText editText){
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(editText.getWindowToken(), 0);
+
+    public void hideKeyboard(EditText editText) {
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(editText.getWindowToken(), 0);
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,7 +103,7 @@ public class CreateProfileActivity extends AppCompatActivity implements View.OnC
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
                             finish();
-                            setHideSoftKeyboard(mConfirmPasswordEditText);
+                            hideKeyboard(mConfirmPasswordEditText);
                         }
                     }
 
